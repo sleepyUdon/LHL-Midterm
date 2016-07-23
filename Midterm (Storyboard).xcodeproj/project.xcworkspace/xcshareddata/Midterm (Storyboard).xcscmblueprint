@@ -1,20 +1,20 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DBEBA49FFE6D354A7908EF1A61096B0BBADFC292",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "C9FC50D354D6F6E1D3F6A6568F1363552961AAC8",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "DBEBA49FFE6D354A7908EF1A61096B0BBADFC292" : 0,
+    "C9FC50D354D6F6E1D3F6A6568F1363552961AAC8" : 0,
     "9F7CC8580B708AB49ED1184EBF6BF00FC103F59D" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "5639D7AD-9092-40CA-8BDC-2FD301577B52",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "DBEBA49FFE6D354A7908EF1A61096B0BBADFC292" : "Objective-C\/",
+    "C9FC50D354D6F6E1D3F6A6568F1363552961AAC8" : "Midterm\/",
     "9F7CC8580B708AB49ED1184EBF6BF00FC103F59D" : ""
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Midterm (Storyboard)",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
-  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Midterm (Storyboard)\/Midterm (Storyboard).xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Midterm (Storyboard).xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "ssh:\/\/github.com\/sleepyUdon\/LighthouseLab",
@@ -22,9 +22,9 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9F7CC8580B708AB49ED1184EBF6BF00FC103F59D"
     },
     {
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:sleepyUdon\/Lighthouse-Lab.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/sleepyUdon\/LHL-Midterm.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
-      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DBEBA49FFE6D354A7908EF1A61096B0BBADFC292"
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "C9FC50D354D6F6E1D3F6A6568F1363552961AAC8"
     }
   ]
 }
