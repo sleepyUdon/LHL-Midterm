@@ -506,6 +506,7 @@
 				7CF89F911D4380F200907DE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7CF89F921D4380F200907DE3 /* Build configuration list for PBXNativeTarget "Midterm (Storyboard)Tests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +515,7 @@
 				7CF89F941D4380F200907DE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7CF89F951D4380F200907DE3 /* Build configuration list for PBXNativeTarget "Midterm (Storyboard)UITests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +524,7 @@
 				7CF89F971D4380F200907DE3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
