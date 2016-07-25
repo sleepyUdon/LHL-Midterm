@@ -36,13 +36,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(returnedFromBackgroundNotification:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    [self photolibraryAuthorizationStatus];
+    [self cameraAccessAuthorizationStatus];
+    
+}
+
+
+- (void)returnedFromBackgroundNotification:(NSNotification *)notification {
+    [self photolibraryAuthorizationStatus];
+    [self cameraAccessAuthorizationStatus];
 }
 
 
 
-
-#pragma button: SAVE PROFILE
+#pragma button: Save Profile
 
 - (IBAction)saveProfile:(id)sender {
     Dog *dog = [NSEntityDescription insertNewObjectForEntityForName:@"Dog" inManagedObjectContext:self.managedObjectContext];
@@ -73,6 +81,15 @@
         NSLog(@"error saving: %@", error.localizedDescription);
     }
 }
+
+
+#pragma mark - Upload Picture
+
+- (IBAction)UploadPicture:(id)sender {
+    
+    
+}
+
 
 #pragma mark - Checking Photo Library Authorization
 
