@@ -29,6 +29,7 @@
 		7CF89FD91D468E0600907DE3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FD71D468E0600907DE3 /* User.m */; };
 		7CF89FDE1D46963D00907DE3 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FDB1D46963D00907DE3 /* Event+CoreDataProperties.m */; };
 		7CF89FDF1D46963D00907DE3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FDD1D46963D00907DE3 /* Event.m */; };
+		7CF89FE21D46CC7500907DE3 /* DummyDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FE11D46CC7500907DE3 /* DummyDataManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,8 @@
 		7CF89FDB1D46963D00907DE3 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
 		7CF89FDC1D46963D00907DE3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		7CF89FDD1D46963D00907DE3 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
+		7CF89FE01D46CC7500907DE3 /* DummyDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DummyDataManager.h; path = "Midterm (Storyboard)/DummyDataManager.h"; sourceTree = "<group>"; };
+		7CF89FE11D46CC7500907DE3 /* DummyDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DummyDataManager.m; path = "Midterm (Storyboard)/DummyDataManager.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +199,8 @@
 				7CF89FA41D46736900907DE3 /* Dog+CoreDataProperties.m */,
 				7CF89FA51D46736900907DE3 /* Dog.h */,
 				7CF89FA61D46736900907DE3 /* Dog.m */,
+				7CF89FE01D46CC7500907DE3 /* DummyDataManager.h */,
+				7CF89FE11D46CC7500907DE3 /* DummyDataManager.m */,
 				7CF89F9C1D466CE500907DE3 /* CoreData.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -411,6 +416,7 @@
 				7CF89FCB1D4675A400907DE3 /* UserProfileViewController.m in Sources */,
 				7CF89FDF1D46963D00907DE3 /* Event.m in Sources */,
 				7CF89F9E1D466CE500907DE3 /* CoreData.xcdatamodeld in Sources */,
+				7CF89FE21D46CC7500907DE3 /* DummyDataManager.m in Sources */,
 				7CF89F641D4380F100907DE3 /* AppDelegate.m in Sources */,
 				7CF89F611D4380F100907DE3 /* main.m in Sources */,
 				7CF89FBA1D46744D00907DE3 /* EventsListViewController.m in Sources */,
