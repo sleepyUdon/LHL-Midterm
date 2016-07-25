@@ -496,9 +496,11 @@
                                 </variation>
                             </view>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="BIj-hV-rU8" firstAttribute="top" secondItem="zzc-ab-gqp" secondAttribute="bottom" constant="5" id="Fea-ma-89Y"/>
                             <constraint firstAttribute="bottom" secondItem="BIj-hV-rU8" secondAttribute="bottom" id="GJD-7e-gVy"/>
+                            <constraint firstItem="BIj-hV-rU8" firstAttribute="top" secondItem="zzc-ab-gqp" secondAttribute="bottom" constant="19" id="Rhb-w2-53g"/>
                             <constraint firstItem="PuO-0T-nyn" firstAttribute="top" secondItem="Qq4-zp-Tfk" secondAttribute="bottom" id="by3-aL-fLw"/>
                             <constraint firstItem="zzc-ab-gqp" firstAttribute="centerX" secondItem="S23-wa-KSi" secondAttribute="centerX" id="hxE-MZ-f9j"/>
                             <constraint firstAttribute="trailing" secondItem="BIj-hV-rU8" secondAttribute="trailing" id="oCk-80-q20"/>
@@ -520,7 +522,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="backgroundViewBottomConstraint" destination="GJD-7e-gVy" id="cJ0-lt-B3Y"/>
+                        <outlet property="bottomConstraint" destination="GJD-7e-gVy" id="yNM-Fc-xjN"/>
                         <outlet property="dogBirthDateField" destination="Izl-me-bGx" id="rdk-uV-fEC"/>
                         <outlet property="dogBreedField" destination="fV8-wd-PP5" id="9lM-Rw-Ctm"/>
                         <outlet property="dogDescriptionField" destination="Khh-gk-mnn" id="Hbe-qp-HDA"/>

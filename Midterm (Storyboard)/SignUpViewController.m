@@ -14,7 +14,7 @@
 
 
 
-@interface SignUpViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface SignUpViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *dogPictureView;
 
@@ -29,7 +29,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *dogPasswordField;
 
 @property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *backgroundViewBottomConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
+@property (nonatomic) CGFloat bottomConstraintConstant;
 
 @end
 
@@ -37,12 +39,41 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.bottomConstraintConstant = self.bottomConstraint.constant;
-    self.textField.delegate = self;
-    [self addObservers];
-
     
+    self.bottomConstraintConstant = self.bottomConstraint.constant;
+    [self addObservers];
 }
+
+#pragma SetupKeyboard
+
+- (void)addObservers {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHide:) name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)keyboardShow:(NSNotification *)notification {
+    NSLog(@"%@", notification.userInfo);
+    NSValue *value = notification.userInfo[UIKeyboardFrameBeginUserInfoKey];
+    CGRect rect = [value CGRectValue];
+    CGFloat keyboardHeight = rect.size.height;
+    self.bottomConstraint.constant = keyboardHeight + self.bottomConstraintConstant;
+}
+
+- (void)keyboardHide:(NSNotification *)notification {
+    NSLog(@"%@", notification.userInfo);
+    self.bottomConstraint.constant = self.bottomConstraintConstant;
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
 
 
 
