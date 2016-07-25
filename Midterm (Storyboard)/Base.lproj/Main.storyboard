@@ -4,6 +4,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Unknown constraint types" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--LaunchPage-->
@@ -50,7 +51,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LBx-It-HLp" userLabel="background">
                                 <rect key="frame" x="0.0" y="260" width="600" height="340"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login to my account &gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEk-a0-DNE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Login to my account &gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEk-a0-DNE">
                                         <rect key="frame" x="200" y="148" width="200" height="45"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -67,7 +68,7 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETF-GT-Ml7">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ETF-GT-Ml7">
                                         <rect key="frame" x="175" y="217" width="250" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="250" id="B6l-ls-Qhq"/>
@@ -86,7 +87,7 @@
                                             <segue destination="Cr0-kb-EbM" kind="showDetail" id="RNC-FS-pg6"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E5B-mM-B5T">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E5B-mM-B5T">
                                         <rect key="frame" x="200" y="107" width="200" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="NLw-yu-O3e"/>
@@ -95,7 +96,7 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username or password is invalid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvJ-78-kaX">
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Username or password is invalid" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvJ-78-kaX">
                                         <rect key="frame" x="177" y="263" width="247" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -117,10 +118,9 @@
                                     <constraint firstItem="IvJ-78-kaX" firstAttribute="centerX" secondItem="LBx-It-HLp" secondAttribute="centerX" id="Enz-Ix-wig"/>
                                     <constraint firstItem="E5B-mM-B5T" firstAttribute="top" secondItem="bcv-uy-mEk" secondAttribute="bottom" constant="12" id="Oof-aj-hdG"/>
                                     <constraint firstItem="ETF-GT-Ml7" firstAttribute="centerX" secondItem="LBx-It-HLp" secondAttribute="centerX" id="UtD-AK-Fbd"/>
-                                    <constraint firstItem="ibv-w2-YJi" firstAttribute="centerY" secondItem="LBx-It-HLp" secondAttribute="centerY" id="Y7e-yn-j7R"/>
-                                    <constraint firstItem="ibv-w2-YJi" firstAttribute="top" secondItem="E5B-mM-B5T" secondAttribute="bottom" constant="11" id="ZMB-T2-fEI"/>
-                                    <constraint firstItem="ibv-w2-YJi" firstAttribute="centerX" secondItem="LBx-It-HLp" secondAttribute="centerX" id="aGW-tE-bjM"/>
-                                    <constraint firstItem="ETF-GT-Ml7" firstAttribute="top" secondItem="ibv-w2-YJi" secondAttribute="bottom" constant="24" id="oKk-kk-XMe"/>
+                                    <constraint firstAttribute="centerY" secondItem="LBx-It-HLp" secondAttribute="centerY" id="Y7e-yn-j7R"/>
+                                    <constraint firstAttribute="top" secondItem="E5B-mM-B5T" secondAttribute="bottom" constant="11" id="ZMB-T2-fEI"/>
+                                    <constraint firstAttribute="centerX" secondItem="LBx-It-HLp" secondAttribute="centerX" id="aGW-tE-bjM"/>
                                     <constraint firstItem="E5B-mM-B5T" firstAttribute="centerX" secondItem="LBx-It-HLp" secondAttribute="centerX" id="uqU-D4-r60"/>
                                     <constraint firstItem="bcv-uy-mEk" firstAttribute="centerX" secondItem="LBx-It-HLp" secondAttribute="centerX" id="uxn-d6-kSi"/>
                                 </constraints>
