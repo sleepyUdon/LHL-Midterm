@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AppDelegate.h"
 
 @interface LoginViewController : UIViewController
+
+@property AppDelegate *appDelegate;
+@property NSManagedObjectContext *managedObjectContext;
 
 @end
