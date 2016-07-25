@@ -16,6 +16,7 @@
 @dynamic eventAddress;
 @dynamic eventDate;
 @dynamic eventDescription;
+@dynamic eventTitle;
 @dynamic dog;
 
 @end

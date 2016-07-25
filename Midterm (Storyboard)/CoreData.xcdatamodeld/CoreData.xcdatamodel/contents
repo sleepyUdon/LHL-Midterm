@@ -13,9 +13,10 @@
         <relationship name="user" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Dog" inverseName="user" inverseEntity="Dog" syncable="YES"/>
     </entity>
     <entity name="Event" representedClassName="Event" syncable="YES">
-        <attribute name="eventAddress" optional="YES" syncable="YES"/>
-        <attribute name="eventDate" optional="YES" syncable="YES"/>
-        <attribute name="eventDescription" optional="YES" syncable="YES"/>
+        <attribute name="eventAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventTitle" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="dog" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Dog" inverseName="event" inverseEntity="Dog" syncable="YES"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
@@ -25,7 +26,7 @@
         <relationship name="dog" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Dog" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Event" positionX="-63" positionY="-18" width="128" height="120"/>
         <element name="Dog" positionX="-54" positionY="-9" width="128" height="195"/>
         <element name="User" positionX="-36" positionY="9" width="128" height="105"/>
     </elements>

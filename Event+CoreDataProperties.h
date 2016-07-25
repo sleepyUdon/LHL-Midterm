@@ -15,9 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Event (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) UNKNOWN_TYPEeventAddress;
-@property (nullable, nonatomic, retain) UNKNOWN_TYPEeventDate;
-@property (nullable, nonatomic, retain) UNKNOWN_TYPEeventDescription;
+@property (nullable, nonatomic, retain) NSString *eventAddress;
+@property (nullable, nonatomic, retain) NSDate *eventDate;
+@property (nullable, nonatomic, retain) NSString *eventDescription;
+@property (nullable, nonatomic, retain) NSString *eventTitle;
 @property (nullable, nonatomic, retain) NSSet<Dog *> *dog;
 
 @end

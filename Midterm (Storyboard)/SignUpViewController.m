@@ -10,9 +10,11 @@
 #import "AppDelegate.h"
 #import "Dog.h"
 #import "User.h"
+@import Photos;
 
 
-@interface SignUpViewController ()
+
+@interface SignUpViewController ()<UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UIImageView *dogPictureView;
 
@@ -45,7 +47,7 @@
 - (IBAction)saveProfile:(id)sender {
     Dog *dog = [NSEntityDescription insertNewObjectForEntityForName:@"Dog" inManagedObjectContext:self.managedObjectContext];
     
-    dog.dogPicture = self.dogPictureView.image;
+//    dog.dogPicture = self.dogPictureView.image;
     dog.dogName = self.dogNameField.text;
     dog.dogGender = self.dogSexField.text;
     
@@ -72,8 +74,69 @@
     }
 }
 
+#pragma mark - Checking Photo Library Authorization
 
-#pragma button: PICK PICTURE
+- (BOOL)photolibraryAuthorizationStatus {
+    PHAuthorizationStatus authStatus = [PHPhotoLibrary authorizationStatus];
+    switch (authStatus) {
+        case PHAuthorizationStatusAuthorized:
+            return YES;
+        case PHAuthorizationStatusNotDetermined: {
+            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+                [self photolibraryAuthorizationStatus];
+            }];
+        }
+            return NO;
+        case PHAuthorizationStatusDenied:
+            // fires if the user denies system attempt to authorize photo library
+            [self alertUserWithMessage:@"This App Requires PhotoLibary Access To Work."];
+            return NO;
+        case PHAuthorizationStatusRestricted:
+            return NO;
+    }
+}
+
+
+- (void)alertUserWithMessage:(NSString *)message {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Authorization" message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        // I'm taking the user to the Device settings when they hit OK
+        NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+        [[UIApplication sharedApplication] openURL:url];
+    }];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        NSLog(@"Cancel Tapped");
+    }];
+    [alertController addAction:cancelAction];
+    [alertController addAction:okAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+
+#pragma mark - Camera Access Authorization
+
+- (BOOL)cameraAccessAuthorizationStatus {
+    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    switch (authStatus) {
+        case AVAuthorizationStatusAuthorized:
+            NSLog(@"Camera authorized");
+            return YES;
+        case AVAuthorizationStatusRestricted:
+            NSLog(@"Camera restricted");
+            return NO;
+        case AVAuthorizationStatusNotDetermined:
+            NSLog(@"Camera status not determined");
+            [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+            return NO;
+        case AVAuthorizationStatusDenied:
+            NSLog(@"Camera status denied");
+            [self alertUserWithMessage:@"This App Requires Authorization To Use Your Camera"];
+            return NO;
+    }
+}
+
+
+#pragma button: Pick Picture
 
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {

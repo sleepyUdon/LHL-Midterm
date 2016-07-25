@@ -17,8 +17,6 @@
 		7CF89F9E1D466CE500907DE3 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89F9C1D466CE500907DE3 /* CoreData.xcdatamodeld */; };
 		7CF89FAD1D46736900907DE3 /* Dog+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FA41D46736900907DE3 /* Dog+CoreDataProperties.m */; };
 		7CF89FAE1D46736900907DE3 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FA61D46736900907DE3 /* Dog.m */; };
-		7CF89FAF1D46736900907DE3 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FA81D46736900907DE3 /* Event+CoreDataProperties.m */; };
-		7CF89FB01D46736900907DE3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FAA1D46736900907DE3 /* Event.m */; };
 		7CF89FB41D4673F300907DE3 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FB31D4673F300907DE3 /* LoginViewController.m */; };
 		7CF89FB71D46741200907DE3 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FB61D46741200907DE3 /* SignUpViewController.m */; };
 		7CF89FBA1D46744D00907DE3 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FB91D46744D00907DE3 /* EventsListViewController.m */; };
@@ -29,6 +27,8 @@
 		7CF89FCE1D4675D200907DE3 /* UserProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FCD1D4675D200907DE3 /* UserProfileTableViewCell.m */; };
 		7CF89FD81D468E0600907DE3 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FD51D468E0600907DE3 /* User+CoreDataProperties.m */; };
 		7CF89FD91D468E0600907DE3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FD71D468E0600907DE3 /* User.m */; };
+		7CF89FDE1D46963D00907DE3 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FDB1D46963D00907DE3 /* Event+CoreDataProperties.m */; };
+		7CF89FDF1D46963D00907DE3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FDD1D46963D00907DE3 /* Event.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,10 +68,6 @@
 		7CF89FA41D46736900907DE3 /* Dog+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Dog+CoreDataProperties.m"; sourceTree = "<group>"; };
 		7CF89FA51D46736900907DE3 /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
 		7CF89FA61D46736900907DE3 /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
-		7CF89FA71D46736900907DE3 /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
-		7CF89FA81D46736900907DE3 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
-		7CF89FA91D46736900907DE3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
-		7CF89FAA1D46736900907DE3 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		7CF89FB21D4673F300907DE3 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7CF89FB31D4673F300907DE3 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7CF89FB51D46741200907DE3 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
@@ -92,6 +88,10 @@
 		7CF89FD51D468E0600907DE3 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		7CF89FD61D468E0600907DE3 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		7CF89FD71D468E0600907DE3 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		7CF89FDA1D46963D00907DE3 /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
+		7CF89FDB1D46963D00907DE3 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
+		7CF89FDC1D46963D00907DE3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		7CF89FDD1D46963D00907DE3 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +185,10 @@
 		7CF89FB11D46736E00907DE3 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				7CF89FDA1D46963D00907DE3 /* Event+CoreDataProperties.h */,
+				7CF89FDB1D46963D00907DE3 /* Event+CoreDataProperties.m */,
+				7CF89FDC1D46963D00907DE3 /* Event.h */,
+				7CF89FDD1D46963D00907DE3 /* Event.m */,
 				7CF89FD41D468E0600907DE3 /* User+CoreDataProperties.h */,
 				7CF89FD51D468E0600907DE3 /* User+CoreDataProperties.m */,
 				7CF89FD61D468E0600907DE3 /* User.h */,
@@ -193,10 +197,6 @@
 				7CF89FA41D46736900907DE3 /* Dog+CoreDataProperties.m */,
 				7CF89FA51D46736900907DE3 /* Dog.h */,
 				7CF89FA61D46736900907DE3 /* Dog.m */,
-				7CF89FA71D46736900907DE3 /* Event+CoreDataProperties.h */,
-				7CF89FA81D46736900907DE3 /* Event+CoreDataProperties.m */,
-				7CF89FA91D46736900907DE3 /* Event.h */,
-				7CF89FAA1D46736900907DE3 /* Event.m */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -402,13 +402,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CF89FB01D46736900907DE3 /* Event.m in Sources */,
 				7CF89FB41D4673F300907DE3 /* LoginViewController.m in Sources */,
 				7CF89FD91D468E0600907DE3 /* User.m in Sources */,
+				7CF89FDE1D46963D00907DE3 /* Event+CoreDataProperties.m in Sources */,
 				7CF89FCE1D4675D200907DE3 /* UserProfileTableViewCell.m in Sources */,
 				7CF89FAE1D46736900907DE3 /* Dog.m in Sources */,
-				7CF89FAF1D46736900907DE3 /* Event+CoreDataProperties.m in Sources */,
 				7CF89FCB1D4675A400907DE3 /* UserProfileViewController.m in Sources */,
+				7CF89FDF1D46963D00907DE3 /* Event.m in Sources */,
 				7CF89F9E1D466CE500907DE3 /* CoreData.xcdatamodeld in Sources */,
 				7CF89F641D4380F100907DE3 /* AppDelegate.m in Sources */,
 				7CF89F611D4380F100907DE3 /* main.m in Sources */,
