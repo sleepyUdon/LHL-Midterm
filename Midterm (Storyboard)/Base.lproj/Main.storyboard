@@ -9,7 +9,7 @@
         <!--LaunchPage-->
         <scene sceneID="ajI-vW-Cxs">
             <objects>
-                <viewController title="LaunchPage" id="Mns-VC-NZz" sceneMemberID="viewController">
+                <viewController title="LaunchPage" id="Mns-VC-NZz" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kUo-RV-iS9"/>
                         <viewControllerLayoutGuide type="bottom" id="yYG-Iv-Cjj"/>
@@ -354,7 +354,7 @@
         <!--Sign Up-->
         <scene sceneID="N2X-jY-tqN">
             <objects>
-                <viewController title="Sign Up" id="vW5-Mb-zL0" sceneMemberID="viewController">
+                <viewController title="Sign Up" id="vW5-Mb-zL0" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qq4-zp-Tfk"/>
                         <viewControllerLayoutGuide type="bottom" id="CwN-kj-O5C"/>
@@ -364,75 +364,75 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PuO-0T-nyn" userLabel="Picture">
-                                <rect key="frame" x="250" y="64" width="100" height="100"/>
+                                <rect key="frame" x="238" y="64" width="125" height="125"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boxer profile picture" translatesAutoresizingMaskIntoConstraints="NO" id="sJr-C5-DE5">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="sJr-C5-DE5" firstAttribute="top" secondItem="PuO-0T-nyn" secondAttribute="top" id="3as-6C-BIX"/>
-                                    <constraint firstAttribute="width" constant="100" id="ASn-8T-j3k"/>
-                                    <constraint firstAttribute="height" constant="100" id="Ien-SW-MMk"/>
+                                    <constraint firstAttribute="width" constant="125" id="ASn-8T-j3k"/>
+                                    <constraint firstAttribute="height" constant="125" id="Ien-SW-MMk"/>
                                     <constraint firstAttribute="bottom" secondItem="sJr-C5-DE5" secondAttribute="bottom" id="ItM-cf-317"/>
                                     <constraint firstItem="sJr-C5-DE5" firstAttribute="leading" secondItem="PuO-0T-nyn" secondAttribute="leading" id="bnM-GN-LzF"/>
                                     <constraint firstAttribute="trailing" secondItem="sJr-C5-DE5" secondAttribute="trailing" id="ft7-zP-gJF"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BIj-hV-rU8">
-                                <rect key="frame" x="0.0" y="194" width="600" height="406"/>
+                                <rect key="frame" x="0.0" y="225" width="600" height="375"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-jv-Hss">
-                                        <rect key="frame" x="190" y="251" width="220" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JxB-jv-Hss">
+                                        <rect key="frame" x="190" y="265" width="220" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="ayA-Cf-JS7"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Gender" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ab-Lc-pJy">
-                                        <rect key="frame" x="190" y="41" width="220" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sex" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ab-Lc-pJy">
+                                        <rect key="frame" x="190" y="55" width="220" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="6zw-kF-KSm"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="weN-XO-CbG">
-                                        <rect key="frame" x="190" y="216" width="220" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="weN-XO-CbG">
+                                        <rect key="frame" x="190" y="230" width="220" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="5mI-dL-GNd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Owner" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lMH-De-wS4">
-                                        <rect key="frame" x="190" y="111" width="220" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Owner" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lMH-De-wS4">
+                                        <rect key="frame" x="190" y="125" width="220" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="syj-lo-wJe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f2Y-iI-V0i">
-                                        <rect key="frame" x="190" y="181" width="220" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f2Y-iI-V0i">
+                                        <rect key="frame" x="190" y="195" width="220" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="mBL-Yh-Dy3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Khh-gk-mnn">
-                                        <rect key="frame" x="190" y="146" width="220" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Khh-gk-mnn">
+                                        <rect key="frame" x="190" y="160" width="220" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="cpW-lo-mc8"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birth Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Izl-me-bGx">
-                                        <rect key="frame" x="190" y="76" width="220" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Birth Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Izl-me-bGx">
+                                        <rect key="frame" x="190" y="90" width="220" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="VD3-41-ZnG"/>
                                         </constraints>
@@ -442,18 +442,19 @@
                                             <segue destination="ctk-p0-ms3" kind="presentation" id="7IZ-64-2wX"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Breed" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fV8-wd-PP5">
-                                        <rect key="frame" x="190" y="6" width="220" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Breed" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fV8-wd-PP5">
+                                        <rect key="frame" x="190" y="20" width="220" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="220" id="1cf-a5-VRg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Username is not available / fields required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w90-aZ-9do">
-                                        <rect key="frame" x="141" y="294" width="319" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username is not available / fields required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w90-aZ-9do">
+                                        <rect key="frame" x="182" y="305" width="237" height="15"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                        <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -484,7 +485,7 @@
                                 <state key="normal" title="SAVE"/>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zzc-ab-gqp">
-                                <rect key="frame" x="190" y="164" width="220" height="30"/>
+                                <rect key="frame" x="190" y="189" width="220" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="220" id="mVs-7x-xzI"/>
                                 </constraints>
@@ -501,7 +502,7 @@
                             <constraint firstItem="zzc-ab-gqp" firstAttribute="centerX" secondItem="S23-wa-KSi" secondAttribute="centerX" id="PgW-fe-Epn"/>
                             <constraint firstItem="zzc-ab-gqp" firstAttribute="top" secondItem="sJr-C5-DE5" secondAttribute="bottom" id="Vqw-0S-Fv6"/>
                             <constraint firstItem="PuO-0T-nyn" firstAttribute="leading" secondItem="S23-wa-KSi" secondAttribute="leadingMargin" id="WyP-24-4Eg"/>
-                            <constraint firstItem="BIj-hV-rU8" firstAttribute="top" secondItem="PuO-0T-nyn" secondAttribute="bottom" constant="30" id="eAh-t0-adh"/>
+                            <constraint firstItem="BIj-hV-rU8" firstAttribute="top" secondItem="zzc-ab-gqp" secondAttribute="bottom" constant="6" id="lmD-Ie-H0t"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -512,10 +513,24 @@
                     <navigationItem key="navigationItem" title="New Profile" id="7k4-Kr-kKG">
                         <barButtonItem key="rightBarButtonItem" title="SAVE" id="9uv-si-yqM">
                             <connections>
+                                <action selector="saveProfile:" destination="vW5-Mb-zL0" id="1ty-vQ-Hco"/>
                                 <segue destination="LfS-7z-iae" kind="show" id="cdt-mN-8Ah"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dogBirthDateField" destination="Izl-me-bGx" id="rdk-uV-fEC"/>
+                        <outlet property="dogBreedField" destination="fV8-wd-PP5" id="9lM-Rw-Ctm"/>
+                        <outlet property="dogDescriptionField" destination="Khh-gk-mnn" id="Hbe-qp-HDA"/>
+                        <outlet property="dogLocationField" destination="f2Y-iI-V0i" id="l5e-Rr-ErL"/>
+                        <outlet property="dogNameField" destination="zzc-ab-gqp" id="uPa-os-Lw9"/>
+                        <outlet property="dogOwnerField" destination="lMH-De-wS4" id="lkb-sq-akF"/>
+                        <outlet property="dogPasswordField" destination="JxB-jv-Hss" id="zXO-hq-9Z8"/>
+                        <outlet property="dogPictureView" destination="sJr-C5-DE5" id="dfO-oO-d3t"/>
+                        <outlet property="dogSexField" destination="3Ab-Lc-pJy" id="E2l-dK-GTd"/>
+                        <outlet property="dogUserNameField" destination="weN-XO-CbG" id="Ajr-50-lMd"/>
+                        <outlet property="errorMessageLabel" destination="w90-aZ-9do" id="Xzy-tn-4KP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f62-EV-JLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -524,7 +539,7 @@
         <!--Main Menu-->
         <scene sceneID="9iL-ZT-pfy">
             <objects>
-                <viewController title="Main Menu" id="LfS-7z-iae" sceneMemberID="viewController">
+                <viewController title="Main Menu" id="LfS-7z-iae" customClass="EventsListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yuj-ih-sMM"/>
                         <viewControllerLayoutGuide type="bottom" id="xhy-Bd-Ymg"/>
@@ -533,15 +548,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="25" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xlt-7M-7Br">
-                                <rect key="frame" x="0.0" y="94" width="600" height="382"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="25" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Xlt-7M-7Br">
+                                <rect key="frame" x="0.0" y="94" width="600" height="462"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="Hfx-9E-xBw"/>
                                 </constraints>
                                 <color key="sectionIndexBackgroundColor" red="0.63137254899999995" green="0.53333333329999999" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gq6-yh-LKb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gq6-yh-LKb" customClass="ListOfEventsTableViewCell">
                                         <rect key="frame" x="0.0" y="89" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gq6-yh-LKb" id="eV3-jT-4lB">
@@ -598,6 +613,7 @@
                             <constraint firstItem="Xlt-7M-7Br" firstAttribute="top" secondItem="lQB-na-rjE" secondAttribute="bottom" id="5UK-mn-ErV"/>
                             <constraint firstAttribute="trailing" secondItem="SQU-qC-C9R" secondAttribute="trailing" id="8PW-Pf-hqw"/>
                             <constraint firstItem="lQB-na-rjE" firstAttribute="leading" secondItem="Fwo-aF-tKn" secondAttribute="leading" id="N1C-Sp-HjH"/>
+                            <constraint firstItem="xhy-Bd-Ymg" firstAttribute="top" secondItem="Xlt-7M-7Br" secondAttribute="bottom" id="O97-ho-e6U"/>
                             <constraint firstAttribute="trailing" secondItem="Xlt-7M-7Br" secondAttribute="trailing" id="bmD-hB-MN1"/>
                             <constraint firstItem="SQU-qC-C9R" firstAttribute="top" secondItem="yuj-ih-sMM" secondAttribute="bottom" id="f0a-rR-m8x"/>
                             <constraint firstItem="Xlt-7M-7Br" firstAttribute="leading" secondItem="Fwo-aF-tKn" secondAttribute="leading" id="ofS-dv-TDw"/>
@@ -627,7 +643,7 @@
         <!--Create Event-->
         <scene sceneID="VUs-kL-Qxa">
             <objects>
-                <viewController title="Create Event" id="Ez1-QG-yIV" userLabel="Create Event" sceneMemberID="viewController">
+                <viewController title="Create Event" id="Ez1-QG-yIV" userLabel="Create Event" customClass="CreateEventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UnE-X0-lpA"/>
                         <viewControllerLayoutGuide type="bottom" id="Q9h-VJ-FkR"/>
@@ -767,7 +783,7 @@
         <!--Event Detail-->
         <scene sceneID="Xa0-JT-lZv">
             <objects>
-                <viewController title="Event Detail" id="j2j-er-Ixw" sceneMemberID="viewController">
+                <viewController title="Event Detail" id="j2j-er-Ixw" customClass="EventDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rAP-Cb-leH"/>
                         <viewControllerLayoutGuide type="bottom" id="Je0-AA-50C"/>
@@ -975,7 +991,7 @@
         <!--User Profile-->
         <scene sceneID="Pbs-fE-h6g">
             <objects>
-                <viewController title="User Profile" id="jPz-QS-n5f" userLabel="User Profile" sceneMemberID="viewController">
+                <viewController title="User Profile" id="jPz-QS-n5f" userLabel="User Profile" customClass="UserProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cWM-Ip-Qlg"/>
                         <viewControllerLayoutGuide type="bottom" id="kQW-pl-j4j"/>
@@ -1097,7 +1113,7 @@
                                 <rect key="frame" x="206" y="456" width="374" height="121"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="6" id="hwd-mP-IlK">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="6" id="hwd-mP-IlK" customClass="UserProfileTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="374" height="6"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hwd-mP-IlK" id="emk-I4-sDd">

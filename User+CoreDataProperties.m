@@ -15,6 +15,7 @@
 
 @dynamic userName;
 @dynamic password;
+@dynamic isLoggedIn;
 @dynamic dog;
 
 @end

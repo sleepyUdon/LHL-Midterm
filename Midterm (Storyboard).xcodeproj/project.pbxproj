@@ -9,17 +9,12 @@
 /* Begin PBXBuildFile section */
 		7CF89F611D4380F100907DE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89F601D4380F100907DE3 /* main.m */; };
 		7CF89F641D4380F100907DE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89F631D4380F100907DE3 /* AppDelegate.m */; };
-		7CF89F671D4380F100907DE3 /* Midterm__Storyboard_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89F651D4380F100907DE3 /* Midterm__Storyboard_.xcdatamodeld */; };
-		7CF89F6A1D4380F100907DE3 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89F691D4380F100907DE3 /* MasterViewController.m */; };
-		7CF89F6D1D4380F100907DE3 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89F6C1D4380F100907DE3 /* DetailViewController.m */; };
 		7CF89F701D4380F100907DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF89F6E1D4380F100907DE3 /* Main.storyboard */; };
 		7CF89F721D4380F100907DE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CF89F711D4380F100907DE3 /* Assets.xcassets */; };
 		7CF89F751D4380F100907DE3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF89F731D4380F100907DE3 /* LaunchScreen.storyboard */; };
 		7CF89F801D4380F200907DE3 /* Midterm__Storyboard_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89F7F1D4380F200907DE3 /* Midterm__Storyboard_Tests.m */; };
 		7CF89F8B1D4380F200907DE3 /* Midterm__Storyboard_UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89F8A1D4380F200907DE3 /* Midterm__Storyboard_UITests.m */; };
 		7CF89F9E1D466CE500907DE3 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89F9C1D466CE500907DE3 /* CoreData.xcdatamodeld */; };
-		7CF89FAB1D46736900907DE3 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FA01D46736900907DE3 /* User+CoreDataProperties.m */; };
-		7CF89FAC1D46736900907DE3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FA21D46736900907DE3 /* User.m */; };
 		7CF89FAD1D46736900907DE3 /* Dog+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FA41D46736900907DE3 /* Dog+CoreDataProperties.m */; };
 		7CF89FAE1D46736900907DE3 /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FA61D46736900907DE3 /* Dog.m */; };
 		7CF89FAF1D46736900907DE3 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FA81D46736900907DE3 /* Event+CoreDataProperties.m */; };
@@ -32,6 +27,8 @@
 		7CF89FC41D46755F00907DE3 /* CreateEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FC31D46755F00907DE3 /* CreateEventViewController.m */; };
 		7CF89FCB1D4675A400907DE3 /* UserProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FCA1D4675A400907DE3 /* UserProfileViewController.m */; };
 		7CF89FCE1D4675D200907DE3 /* UserProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FCD1D4675D200907DE3 /* UserProfileTableViewCell.m */; };
+		7CF89FD81D468E0600907DE3 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FD51D468E0600907DE3 /* User+CoreDataProperties.m */; };
+		7CF89FD91D468E0600907DE3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FD71D468E0600907DE3 /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,11 +53,6 @@
 		7CF89F601D4380F100907DE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7CF89F621D4380F100907DE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7CF89F631D4380F100907DE3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7CF89F661D4380F100907DE3 /* Midterm__Storyboard_.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Midterm__Storyboard_.xcdatamodel; sourceTree = "<group>"; };
-		7CF89F681D4380F100907DE3 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		7CF89F691D4380F100907DE3 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		7CF89F6B1D4380F100907DE3 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		7CF89F6C1D4380F100907DE3 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		7CF89F6F1D4380F100907DE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CF89F711D4380F100907DE3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CF89F741D4380F100907DE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,10 +64,6 @@
 		7CF89F8A1D4380F200907DE3 /* Midterm__Storyboard_UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Midterm__Storyboard_UITests.m; sourceTree = "<group>"; };
 		7CF89F8C1D4380F200907DE3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CF89F9D1D466CE500907DE3 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
-		7CF89F9F1D46736900907DE3 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
-		7CF89FA01D46736900907DE3 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
-		7CF89FA11D46736900907DE3 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		7CF89FA21D46736900907DE3 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		7CF89FA31D46736900907DE3 /* Dog+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Dog+CoreDataProperties.h"; sourceTree = "<group>"; };
 		7CF89FA41D46736900907DE3 /* Dog+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Dog+CoreDataProperties.m"; sourceTree = "<group>"; };
 		7CF89FA51D46736900907DE3 /* Dog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dog.h; sourceTree = "<group>"; };
@@ -100,6 +88,10 @@
 		7CF89FCA1D4675A400907DE3 /* UserProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserProfileViewController.m; path = ../UserProfileViewController.m; sourceTree = "<group>"; };
 		7CF89FCC1D4675D200907DE3 /* UserProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserProfileTableViewCell.h; path = ../UserProfileTableViewCell.h; sourceTree = "<group>"; };
 		7CF89FCD1D4675D200907DE3 /* UserProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserProfileTableViewCell.m; path = ../UserProfileTableViewCell.m; sourceTree = "<group>"; };
+		7CF89FD41D468E0600907DE3 /* User+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "User+CoreDataProperties.h"; sourceTree = "<group>"; };
+		7CF89FD51D468E0600907DE3 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
+		7CF89FD61D468E0600907DE3 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		7CF89FD71D468E0600907DE3 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,16 +146,11 @@
 				7CF89F621D4380F100907DE3 /* AppDelegate.h */,
 				7CF89F631D4380F100907DE3 /* AppDelegate.m */,
 				7CF89FD31D46770500907DE3 /* Views */,
-				7CF89F681D4380F100907DE3 /* MasterViewController.h */,
-				7CF89F691D4380F100907DE3 /* MasterViewController.m */,
-				7CF89F6B1D4380F100907DE3 /* DetailViewController.h */,
-				7CF89F6C1D4380F100907DE3 /* DetailViewController.m */,
 				7CF89F6E1D4380F100907DE3 /* Main.storyboard */,
 				7CF89F9C1D466CE500907DE3 /* CoreData.xcdatamodeld */,
 				7CF89F711D4380F100907DE3 /* Assets.xcassets */,
 				7CF89F731D4380F100907DE3 /* LaunchScreen.storyboard */,
 				7CF89F761D4380F100907DE3 /* Info.plist */,
-				7CF89F651D4380F100907DE3 /* Midterm__Storyboard_.xcdatamodeld */,
 				7CF89F5F1D4380F100907DE3 /* Supporting Files */,
 			);
 			path = "Midterm (Storyboard)";
@@ -198,10 +185,10 @@
 		7CF89FB11D46736E00907DE3 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				7CF89F9F1D46736900907DE3 /* User+CoreDataProperties.h */,
-				7CF89FA01D46736900907DE3 /* User+CoreDataProperties.m */,
-				7CF89FA11D46736900907DE3 /* User.h */,
-				7CF89FA21D46736900907DE3 /* User.m */,
+				7CF89FD41D468E0600907DE3 /* User+CoreDataProperties.h */,
+				7CF89FD51D468E0600907DE3 /* User+CoreDataProperties.m */,
+				7CF89FD61D468E0600907DE3 /* User.h */,
+				7CF89FD71D468E0600907DE3 /* User.m */,
 				7CF89FA31D46736900907DE3 /* Dog+CoreDataProperties.h */,
 				7CF89FA41D46736900907DE3 /* Dog+CoreDataProperties.m */,
 				7CF89FA51D46736900907DE3 /* Dog.h */,
@@ -416,22 +403,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CF89FB01D46736900907DE3 /* Event.m in Sources */,
-				7CF89FAC1D46736900907DE3 /* User.m in Sources */,
 				7CF89FB41D4673F300907DE3 /* LoginViewController.m in Sources */,
-				7CF89FAB1D46736900907DE3 /* User+CoreDataProperties.m in Sources */,
+				7CF89FD91D468E0600907DE3 /* User.m in Sources */,
 				7CF89FCE1D4675D200907DE3 /* UserProfileTableViewCell.m in Sources */,
 				7CF89FAE1D46736900907DE3 /* Dog.m in Sources */,
-				7CF89F6D1D4380F100907DE3 /* DetailViewController.m in Sources */,
-				7CF89F6A1D4380F100907DE3 /* MasterViewController.m in Sources */,
 				7CF89FAF1D46736900907DE3 /* Event+CoreDataProperties.m in Sources */,
 				7CF89FCB1D4675A400907DE3 /* UserProfileViewController.m in Sources */,
 				7CF89F9E1D466CE500907DE3 /* CoreData.xcdatamodeld in Sources */,
 				7CF89F641D4380F100907DE3 /* AppDelegate.m in Sources */,
-				7CF89F671D4380F100907DE3 /* Midterm__Storyboard_.xcdatamodeld in Sources */,
 				7CF89F611D4380F100907DE3 /* main.m in Sources */,
 				7CF89FBA1D46744D00907DE3 /* EventsListViewController.m in Sources */,
 				7CF89FC41D46755F00907DE3 /* CreateEventViewController.m in Sources */,
 				7CF89FB71D46741200907DE3 /* SignUpViewController.m in Sources */,
+				7CF89FD81D468E0600907DE3 /* User+CoreDataProperties.m in Sources */,
 				7CF89FAD1D46736900907DE3 /* Dog+CoreDataProperties.m in Sources */,
 				7CF89FBD1D46750000907DE3 /* ListOfEventsTableViewCell.m in Sources */,
 				7CF89FC11D46752900907DE3 /* EventDetailViewController.m in Sources */,
@@ -681,16 +665,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		7CF89F651D4380F100907DE3 /* Midterm__Storyboard_.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				7CF89F661D4380F100907DE3 /* Midterm__Storyboard_.xcdatamodel */,
-			);
-			currentVersion = 7CF89F661D4380F100907DE3 /* Midterm__Storyboard_.xcdatamodel */;
-			path = Midterm__Storyboard_.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
 		7CF89F9C1D466CE500907DE3 /* CoreData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

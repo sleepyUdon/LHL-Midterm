@@ -17,7 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, retain) NSString *userName;
 @property (nullable, nonatomic, retain) NSString *password;
-@property (nullable, nonatomic, retain) NSManagedObject *dog;
+@property (nullable, nonatomic, retain) NSNumber *isLoggedIn;
+@property (nullable, nonatomic, retain) Dog *dog;
 
 @end
 
