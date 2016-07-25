@@ -147,8 +147,6 @@
 				7CF89F631D4380F100907DE3 /* AppDelegate.m */,
 				7CF89FD31D46770500907DE3 /* Views */,
 				7CF89F6E1D4380F100907DE3 /* Main.storyboard */,
-				7CF89F9C1D466CE500907DE3 /* CoreData.xcdatamodeld */,
-				7CF89F711D4380F100907DE3 /* Assets.xcassets */,
 				7CF89F731D4380F100907DE3 /* LaunchScreen.storyboard */,
 				7CF89F761D4380F100907DE3 /* Info.plist */,
 				7CF89F5F1D4380F100907DE3 /* Supporting Files */,
@@ -159,6 +157,7 @@
 		7CF89F5F1D4380F100907DE3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7CF89F711D4380F100907DE3 /* Assets.xcassets */,
 				7CF89F601D4380F100907DE3 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -197,6 +196,7 @@
 				7CF89FA41D46736900907DE3 /* Dog+CoreDataProperties.m */,
 				7CF89FA51D46736900907DE3 /* Dog.h */,
 				7CF89FA61D46736900907DE3 /* Dog.m */,
+				7CF89F9C1D466CE500907DE3 /* CoreData.xcdatamodeld */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -671,7 +671,8 @@
 				7CF89F9D1D466CE500907DE3 /* CoreData.xcdatamodel */,
 			);
 			currentVersion = 7CF89F9D1D466CE500907DE3 /* CoreData.xcdatamodel */;
-			path = CoreData.xcdatamodeld;
+			name = CoreData.xcdatamodeld;
+			path = "Midterm (Storyboard)/CoreData.xcdatamodeld";
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
