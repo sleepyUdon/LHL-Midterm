@@ -62,6 +62,19 @@ error:(NSError * _Nullable *)error
     [dog1 setValue:@"Roger" forKey:@"dogOwner"];
     [dog1 setValue:@"boxer.png" forKey:@"dogPicture"];
     
+    NSManagedObject *dog2 = [[NSManagedObject alloc] initWithEntity:dogEntityDescription
+                                     insertIntoManagedObjectContext:self.context];
+    
+    
+    [dog2 setValue:@"Maddy" forKey:@"dogName"];
+    [dog2 setValue:@"2011-03-30" forKey:@"dogBOD"];
+    [dog2 setValue:@"Pomerian" forKey:@"dogBreed"];
+    [dog2 setValue:@"Hyperactive" forKey:@"dogDescription"];
+    [dog2 setValue:@"Female" forKey:@"dogGender"];
+    [dog2 setValue:@"Toronto" forKey:@"dogLocation"];
+    [dog2 setValue:@"Maria" forKey:@"dogOwner"];
+    [dog2 setValue:@"pomerian.png" forKey:@"dogPicture"];
+
     
     NSEntityDescription *eventEntityDescription = [NSEntityDescription entityForName:@"Event"
                                                             inManagedObjectContext:self.context];
