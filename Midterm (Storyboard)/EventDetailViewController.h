@@ -6,8 +6,15 @@
 //  Copyright © 2016 LightHouse Labs. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
+#import "Event.h"
 
 @interface EventDetailViewController : UIViewController
+
+@property (strong, nonatomic) Event *event;
+@property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *eventOrganizerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *eventDateLabel;
 
 @end

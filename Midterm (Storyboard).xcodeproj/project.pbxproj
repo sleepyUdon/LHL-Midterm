@@ -30,6 +30,7 @@
 		7CF89FDE1D46963D00907DE3 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FDB1D46963D00907DE3 /* Event+CoreDataProperties.m */; };
 		7CF89FDF1D46963D00907DE3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FDD1D46963D00907DE3 /* Event.m */; };
 		7CF89FE21D46CC7500907DE3 /* DummyDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FE11D46CC7500907DE3 /* DummyDataManager.m */; };
+		7CF89FE41D46F84200907DE3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF89FE31D46F84200907DE3 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		7CF89FDD1D46963D00907DE3 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		7CF89FE01D46CC7500907DE3 /* DummyDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DummyDataManager.h; path = "Midterm (Storyboard)/DummyDataManager.h"; sourceTree = "<group>"; };
 		7CF89FE11D46CC7500907DE3 /* DummyDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DummyDataManager.m; path = "Midterm (Storyboard)/DummyDataManager.m"; sourceTree = "<group>"; };
+		7CF89FE31D46F84200907DE3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CF89FE41D46F84200907DE3 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +128,7 @@
 		7CF89F531D4380F100907DE3 = {
 			isa = PBXGroup;
 			children = (
+				7CF89FE31D46F84200907DE3 /* MapKit.framework */,
 				7CF89FB11D46736E00907DE3 /* CoreData */,
 				7CF89F5E1D4380F100907DE3 /* Midterm (Storyboard) */,
 				7CF89F7E1D4380F200907DE3 /* Midterm (Storyboard)Tests */,

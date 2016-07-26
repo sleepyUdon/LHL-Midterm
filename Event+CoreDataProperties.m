@@ -18,5 +18,6 @@
 @dynamic eventDescription;
 @dynamic eventTitle;
 @dynamic dog;
+@dynamic eventOrganizer;
 
 @end

@@ -609,27 +609,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnF-HU-LRa">
                                 <rect key="frame" x="0.0" y="139" width="600" height="461"/>
                                 <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="s38-nu-LDg">
-                                        <rect key="frame" x="0.0" y="80" width="600" height="200"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="J0r-d8-1kd"/>
-                                        </constraints>
-                                    </mapView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LW5-Fc-6VJ">
-                                        <rect key="frame" x="540" y="5" width="50" height="25"/>
+                                        <rect key="frame" x="461" y="5" width="129" height="25"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="nqZ-x1-TQh"/>
+                                            <constraint firstAttribute="width" constant="129" id="nqZ-x1-TQh"/>
                                             <constraint firstAttribute="height" constant="25" id="vot-Ad-Tlu"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="July 25, 2016" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xsf-jV-jB1">
-                                        <rect key="frame" x="440" y="5" width="100" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="hIg-XY-osI"/>
-                                            <constraint firstAttribute="width" constant="100" id="oxW-vc-sIC"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -711,6 +695,12 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="s38-nu-LDg">
+                                        <rect key="frame" x="0.0" y="82" width="600" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="J0r-d8-1kd"/>
+                                        </constraints>
+                                    </mapView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.63137254899999995" green="0.53333333329999999" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -718,11 +708,9 @@
                                     <constraint firstItem="m59-bd-WEN" firstAttribute="top" secondItem="uiY-RI-ISC" secondAttribute="bottom" constant="5" id="5D8-wZ-9pR"/>
                                     <constraint firstAttribute="trailing" secondItem="g06-JU-QLZ" secondAttribute="trailing" constant="10" id="6Cm-CE-EY2"/>
                                     <constraint firstAttribute="trailing" secondItem="LW5-Fc-6VJ" secondAttribute="trailing" constant="10" id="8Wd-CZ-0NS"/>
-                                    <constraint firstItem="Xsf-jV-jB1" firstAttribute="top" secondItem="LW5-Fc-6VJ" secondAttribute="top" id="ESt-Gc-5jL"/>
                                     <constraint firstAttribute="trailing" secondItem="s38-nu-LDg" secondAttribute="trailing" id="FS1-Tb-Gj8"/>
                                     <constraint firstItem="qPt-Pa-TiE" firstAttribute="leading" secondItem="dnF-HU-LRa" secondAttribute="leading" constant="10" id="G0S-Sp-Hoq"/>
                                     <constraint firstItem="s38-nu-LDg" firstAttribute="leading" secondItem="dnF-HU-LRa" secondAttribute="leading" id="LRa-Bw-Oel"/>
-                                    <constraint firstItem="LW5-Fc-6VJ" firstAttribute="leading" secondItem="Xsf-jV-jB1" secondAttribute="trailing" id="LbJ-TY-Pcy"/>
                                     <constraint firstAttribute="bottom" secondItem="m59-bd-WEN" secondAttribute="bottom" constant="20" id="NGq-Sm-vjD"/>
                                     <constraint firstAttribute="trailing" secondItem="m59-bd-WEN" secondAttribute="trailing" constant="5" id="OsX-nD-0Dg"/>
                                     <constraint firstItem="qPt-Pa-TiE" firstAttribute="top" secondItem="dnF-HU-LRa" secondAttribute="top" constant="5" id="RDQ-Zp-TvI"/>
@@ -797,6 +785,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="eventDateLabel" destination="LW5-Fc-6VJ" id="fgA-xT-SnK"/>
+                        <outlet property="eventOrganizerLabel" destination="HyY-sC-6sP" id="XKh-ZE-0In"/>
+                        <outlet property="eventTitleLabel" destination="qPt-Pa-TiE" id="GeL-4s-Da8"/>
+                        <outlet property="mapView" destination="s38-nu-LDg" id="lFs-NZ-0XK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IxO-Nf-kxz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
