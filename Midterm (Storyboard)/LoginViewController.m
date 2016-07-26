@@ -53,14 +53,10 @@
         if ([userListDict[self.usernameTextField.text] isEqualToString:self.passwordTextField.text]) {
             
             return true;
-        
         }
-        
         return false;
     }
-
     return false;
-    
 }
 
 - (void)viewDidLoad {
