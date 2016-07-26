@@ -13,6 +13,7 @@
 
 @interface DummyDataManager()
 @property (nonatomic, strong) NSManagedObjectContext *context;
+@property (nonatomic,strong)  NSEntityDescription *dogEntityDescription;
 
 @end
 
@@ -27,24 +28,20 @@
 }
 
 - (void)createDataIfNeeded {
-    NSInteger fetchCount = 
     
-    
-    - (NSUInteger)countForFetchRequest:(NSFetchRequest *)request
-error:(NSError * _Nullable *)error
-    Pa
-    // fetch on the context for the count.
-    
-    // If the fetch returns zero then create data
-    
-    
-    if (!fetchCount) {
+// VIV FIXTHIS
+//    NSError *error = nil;
+//    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+//    NSUInteger fetchCount = [self.context countForFetchRequest:request error:&error];
+//    if (fetchCount==0) {
         [self createDummyData];
-    }
+//    }
 }
 
 - (void)createDummyData {
-    
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+
     // create all objects and save them to the database
 
     NSEntityDescription *dogEntityDescription = [NSEntityDescription entityForName:@"Dog"
@@ -54,26 +51,30 @@ error:(NSError * _Nullable *)error
     
     
     [dog1 setValue:@"Rocky" forKey:@"dogName"];
-    [dog1 setValue:@"2009-03-31" forKey:@"dogBOD"];
+    [dog1 setValue:[dateFormatter dateFromString:@"01-01-2009"] forKey:@"dogBOD"];
     [dog1 setValue:@"Boxer" forKey:@"dogBreed"];
     [dog1 setValue:@"Love the park" forKey:@"dogDescription"];
     [dog1 setValue:@"Male" forKey:@"dogGender"];
     [dog1 setValue:@"Toronto" forKey:@"dogLocation"];
     [dog1 setValue:@"Roger" forKey:@"dogOwner"];
-    [dog1 setValue:@"boxer.png" forKey:@"dogPicture"];
+    NSString* str = @"boxer.png";
+    NSData* data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    [dog1 setValue:data forKey:@"dogPicture"]; // VIV conver to Data
     
     NSManagedObject *dog2 = [[NSManagedObject alloc] initWithEntity:dogEntityDescription
                                      insertIntoManagedObjectContext:self.context];
     
     
     [dog2 setValue:@"Maddy" forKey:@"dogName"];
-    [dog2 setValue:@"2011-03-30" forKey:@"dogBOD"];
+    [dog2 setValue:[dateFormatter dateFromString:@"01-02-2010"]forKey:@"dogBOD"];
     [dog2 setValue:@"Pomerian" forKey:@"dogBreed"];
     [dog2 setValue:@"Hyperactive" forKey:@"dogDescription"];
     [dog2 setValue:@"Female" forKey:@"dogGender"];
     [dog2 setValue:@"Toronto" forKey:@"dogLocation"];
     [dog2 setValue:@"Maria" forKey:@"dogOwner"];
-    [dog2 setValue:@"pomerian.png" forKey:@"dogPicture"];
+    NSString* str1 = @"pomerian.png";
+    NSData* data2= [str1 dataUsingEncoding:NSUTF8StringEncoding];
+    [dog2 setValue:data2 forKey:@"dogPicture"];
 
     
     NSEntityDescription *eventEntityDescription = [NSEntityDescription entityForName:@"Event"
@@ -83,7 +84,7 @@ error:(NSError * _Nullable *)error
     
     
     [event1 setValue:@"275 Bathurst Street" forKey:@"eventAddress"];
-    [event1 setValue:@"2016-07-31" forKey:@"eventDate"];
+    [event1 setValue:[dateFormatter dateFromString:@"2016-07-31"]forKey:@"eventDate"];
     [event1 setValue:@"Breed dating" forKey:@"eventDescription"];
     [event1 setValue:@"Barktinder" forKey:@"eventTitle"];
     
@@ -93,7 +94,7 @@ error:(NSError * _Nullable *)error
     
     
     [event2 setValue:@"275 Bathurst Street" forKey:@"eventAddress"];
-    [event2 setValue:@"2016-07-31" forKey:@"eventDate"];
+    [event2 setValue:[dateFormatter dateFromString:@"2016-07-31"] forKey:@"eventDate"];
     [event2 setValue:@"Annual picnic" forKey:@"eventDescription"];
     [event2 setValue:@"PuppyMon:Games of Bones" forKey:@"eventTitle"];
     
@@ -105,6 +106,11 @@ error:(NSError * _Nullable *)error
     }
     
     if (![event1.managedObjectContext save:&error]) {
+        NSLog(@"Unable to save managed object context.");
+        NSLog(@"%@, %@", error, error.localizedDescription);
+    }
+    
+    if (![event2.managedObjectContext save:&error]) {
         NSLog(@"Unable to save managed object context.");
         NSLog(@"%@, %@", error, error.localizedDescription);
     }

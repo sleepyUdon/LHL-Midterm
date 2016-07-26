@@ -27,9 +27,9 @@
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     
-    NSEntityDescription *userEntity = [NSEntityDescription entityForName:@"User" inManagedObjectContext:self.managedObjectContext];
+    NSEntityDescription *dogEntity = [NSEntityDescription entityForName:@"Dog" inManagedObjectContext:self.managedObjectContext];
     
-    [fetchRequest setEntity:userEntity];
+    [fetchRequest setEntity:dogEntity];
     
     NSError *error = nil;
     NSArray *userArray = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];

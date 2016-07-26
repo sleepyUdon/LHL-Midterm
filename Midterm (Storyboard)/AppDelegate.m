@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "DummyDataManager.h"
 #import "EventsListViewController.h"
+#import "SignUpViewController.h"
 
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
@@ -21,8 +22,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     _dummyDataManager = [[DummyDataManager alloc] initWithManagedObjectContext:self.managedObjectContext];
     UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
-    EventsListViewController *eventListVC = (EventsListViewController * )navController.topViewController;
-    eventListVC.dummyDataManager = self.dummyDataManager;
+//    EventsListViewController *eventListVC = (EventsListViewController * )navController.topViewController;
+//    eventListVC.dummyDataManager = self.dummyDataManager;
     
     return YES;
 }
@@ -68,7 +69,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Midterm__Storyboard_" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CoreData" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }

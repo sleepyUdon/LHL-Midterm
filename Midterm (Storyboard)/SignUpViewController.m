@@ -8,13 +8,17 @@
 
 #import "SignUpViewController.h"
 #import "AppDelegate.h"
+#import "DummyDataManager.h"
 #import "Dog.h"
 #import "User.h"
+#import "Event.h"
 @import Photos;
 
 
 
-@interface SignUpViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate>
+@interface SignUpViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate, UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *dogPictureView;
 
@@ -28,53 +32,112 @@
 @property (weak, nonatomic) IBOutlet UITextField *dogUserNameField;
 @property (weak, nonatomic) IBOutlet UITextField *dogPasswordField;
 
+@property UITextField *activeField;
+
+@property (strong,nonatomic) NSArray *data;
+
 @property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
 
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
-@property (nonatomic) CGFloat bottomConstraintConstant;
+@property (nonatomic) CGFloat scrollViewCenterConstant;
+
 
 @end
 
+
 @implementation SignUpViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.bottomConstraintConstant = self.bottomConstraint.constant;
-    [self addObservers];
+    UIPickerView *picker = [[UIPickerView alloc] init];
+    picker.dataSource = self;
+    picker.delegate = self;
+    self.dogSexField.inputView = picker;
+    self.data = @[@"Female",@"Male"];
+    
+    self.dogNameField.delegate = self;
+    self.dogBreedField.delegate = self;
+    self.dogSexField.delegate = self;
+    self.dogBirthDateField.delegate = self;
+    self.dogOwnerField.delegate = self;
+    self.dogDescriptionField.delegate = self;
+    self.dogLocationField.delegate = self;
+    self.dogUserNameField.delegate = self;
+    self.dogPasswordField.delegate = self;
+    
+    [self registerForKeyboardNotifications];
+
 }
+
+
+#pragma Setup Picker
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 2;
+}
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return 1;
+}
+
+#pragma SetupTextfield
+
+
+
 
 #pragma SetupKeyboard
 
-- (void)addObservers {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHide:) name:UIKeyboardWillHideNotification object:nil];
+- (void)textFieldDidBeginEditing:(UITextField *)textField{
+    self.activeField = textField;
 }
+
+- (void)registerForKeyboardNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+}
+
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+    
+    // If active text field is hidden by keyboard, scroll it so it's visible
+    // Your application might not need or want this behavior.
+    CGRect aRect = self.view.frame;
+    aRect.size.height -= kbSize.height;
+    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
+        CGPoint scrollPoint = CGPointMake(0.0, self.activeField.frame.origin.y-kbSize.height +10);
+        [self.scrollView setContentOffset:scrollPoint animated:YES];
+    }
+}
+
+// Called when the UIKeyboardWillHideNotification is sent
+- (void)keyboardWillBeHidden:(NSNotification*)aNotification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+}
+
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    self.activeField = nil;
+}
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }
-
-- (void)keyboardShow:(NSNotification *)notification {
-    NSLog(@"%@", notification.userInfo);
-    NSValue *value = notification.userInfo[UIKeyboardFrameBeginUserInfoKey];
-    CGRect rect = [value CGRectValue];
-    CGFloat keyboardHeight = rect.size.height;
-    self.bottomConstraint.constant = keyboardHeight + self.bottomConstraintConstant;
-}
-
-- (void)keyboardHide:(NSNotification *)notification {
-    NSLog(@"%@", notification.userInfo);
-    self.bottomConstraint.constant = self.bottomConstraintConstant;
-}
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
-}
-
-
-
 
 
 
