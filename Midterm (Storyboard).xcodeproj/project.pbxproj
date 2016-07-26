@@ -31,6 +31,13 @@
 		7CF89FDF1D46963D00907DE3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FDD1D46963D00907DE3 /* Event.m */; };
 		7CF89FE21D46CC7500907DE3 /* DummyDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FE11D46CC7500907DE3 /* DummyDataManager.m */; };
 		7CF89FE41D46F84200907DE3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF89FE31D46F84200907DE3 /* MapKit.framework */; };
+		A76748211D47FDDC00BFB422 /* teacuppomeranian.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A767481B1D47FDDB00BFB422 /* teacuppomeranian.jpg */; };
+		A76748221D47FDDC00BFB422 /* squarefacedpoodle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A767481C1D47FDDB00BFB422 /* squarefacedpoodle.jpg */; };
+		A76748231D47FDDC00BFB422 /* labradorretriever.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A767481D1D47FDDB00BFB422 /* labradorretriever.jpg */; };
+		A76748241D47FDDC00BFB422 /* bostonterrier.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A767481E1D47FDDB00BFB422 /* bostonterrier.jpg */; };
+		A76748251D47FDDC00BFB422 /* jackrussel.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A767481F1D47FDDB00BFB422 /* jackrussel.jpg */; };
+		A76748261D47FDDC00BFB422 /* rottweiller.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A76748201D47FDDB00BFB422 /* rottweiller.jpg */; };
+		A76748281D4818B600BFB422 /* rsz_dog-100.png in Resources */ = {isa = PBXBuildFile; fileRef = A76748271D4818B600BFB422 /* rsz_dog-100.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +104,13 @@
 		7CF89FE01D46CC7500907DE3 /* DummyDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DummyDataManager.h; path = "Midterm (Storyboard)/DummyDataManager.h"; sourceTree = "<group>"; };
 		7CF89FE11D46CC7500907DE3 /* DummyDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DummyDataManager.m; path = "Midterm (Storyboard)/DummyDataManager.m"; sourceTree = "<group>"; };
 		7CF89FE31D46F84200907DE3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		A767481B1D47FDDB00BFB422 /* teacuppomeranian.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = teacuppomeranian.jpg; sourceTree = "<group>"; };
+		A767481C1D47FDDB00BFB422 /* squarefacedpoodle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = squarefacedpoodle.jpg; sourceTree = "<group>"; };
+		A767481D1D47FDDB00BFB422 /* labradorretriever.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = labradorretriever.jpg; sourceTree = "<group>"; };
+		A767481E1D47FDDB00BFB422 /* bostonterrier.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bostonterrier.jpg; sourceTree = "<group>"; };
+		A767481F1D47FDDB00BFB422 /* jackrussel.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = jackrussel.jpg; sourceTree = "<group>"; };
+		A76748201D47FDDB00BFB422 /* rottweiller.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rottweiller.jpg; sourceTree = "<group>"; };
+		A76748271D4818B600BFB422 /* rsz_dog-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rsz_dog-100.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +219,13 @@
 				7CF89FA61D46736900907DE3 /* Dog.m */,
 				7CF89FE01D46CC7500907DE3 /* DummyDataManager.h */,
 				7CF89FE11D46CC7500907DE3 /* DummyDataManager.m */,
+				A76748271D4818B600BFB422 /* rsz_dog-100.png */,
+				A767481B1D47FDDB00BFB422 /* teacuppomeranian.jpg */,
+				A767481C1D47FDDB00BFB422 /* squarefacedpoodle.jpg */,
+				A767481D1D47FDDB00BFB422 /* labradorretriever.jpg */,
+				A767481E1D47FDDB00BFB422 /* bostonterrier.jpg */,
+				A767481F1D47FDDB00BFB422 /* jackrussel.jpg */,
+				A76748201D47FDDB00BFB422 /* rottweiller.jpg */,
 				7CF89F9C1D466CE500907DE3 /* CoreData.xcdatamodeld */,
 			);
 			name = CoreData;
@@ -387,7 +408,14 @@
 			files = (
 				7CF89F751D4380F100907DE3 /* LaunchScreen.storyboard in Resources */,
 				7CF89F721D4380F100907DE3 /* Assets.xcassets in Resources */,
+				A76748241D47FDDC00BFB422 /* bostonterrier.jpg in Resources */,
 				7CF89F701D4380F100907DE3 /* Main.storyboard in Resources */,
+				A76748251D47FDDC00BFB422 /* jackrussel.jpg in Resources */,
+				A76748211D47FDDC00BFB422 /* teacuppomeranian.jpg in Resources */,
+				A76748261D47FDDC00BFB422 /* rottweiller.jpg in Resources */,
+				A76748221D47FDDC00BFB422 /* squarefacedpoodle.jpg in Resources */,
+				A76748281D4818B600BFB422 /* rsz_dog-100.png in Resources */,
+				A76748231D47FDDC00BFB422 /* labradorretriever.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
