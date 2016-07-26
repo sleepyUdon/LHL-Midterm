@@ -34,7 +34,7 @@
 
 @property UITextField *activeField;
 
-@property (strong,nonatomic) NSArray *dataArray;
+//@property (strong,nonatomic) NSArray *dataArray;
 
 @property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
 
@@ -52,43 +52,43 @@
     
     UIPickerView *picker = [[UIPickerView alloc] init];
     // Init the data array.
-    dataArray = [[NSMutableArray alloc] init];
-    
-    // Add some data for demo purposes.
-    [dataArray addObject:@"One"];
-    [dataArray addObject:@"Two"];
-    [dataArray addObject:@"Three"];
-    [dataArray addObject:@"Four"];
-    [dataArray addObject:@"Five"];
-    
+//    dataArray = [[NSMutableArray alloc] init];
+//    
+//    // Add some data for demo purposes.
+//    [dataArray addObject:@"One"];
+//    [dataArray addObject:@"Two"];
+//    [dataArray addObject:@"Three"];
+//    [dataArray addObject:@"Four"];
+//    [dataArray addObject:@"Five"];
+    //
     // Calculate the screen's width.
-    float screenWidth = [UIScreen mainScreen].bounds.size.width;
-    float pickerWidth = screenWidth * 3 / 4;
+    //float screenWidth = [UIScreen mainScreen].bounds.size.width;
+    //float pickerWidth = screenWidth * 3 / 4;
     
     // Calculate the starting x coordinate.
-    float xPoint = screenWidth / 2 - pickerWidth / 2;
+   // float xPoint = screenWidth / 2 - pickerWidth / 2;
     
     // Init the picker view.
-    pickerView = [[UIPickerView alloc] init];
+   // pickerView = [[UIPickerView alloc] init];
     
     // Set the delegate and datasource. Don't expect picker view to work
     // correctly if you don't set it.
-    [pickerView setDataSource: self];
-    [pickerView setDelegate: self];
+  //  [pickerView setDataSource: self];
+    //[pickerView setDelegate: self];
     
     // Set the picker's frame. We set the y coordinate to 50px.
-    [pickerView setFrame: CGRectMake(xPoint, 50.0f, pickerWidth, 200.0f)];
+   // [pickerView setFrame: CGRectMake(xPoint, 50.0f, pickerWidth, 200.0f)];
     
     // Before we add the picker view to our view, let's do a couple more
     // things. First, let the selection indicator (that line inside the
     // picker view that highlights your selection) to be shown.
-    pickerView.showsSelectionIndicator = YES;
+   // pickerView.showsSelectionIndicator = YES;
     
     // Allow us to pre-select the third option in the pickerView.
-    [pickerView selectRow:2 inComponent:0 animated:YES];
+    //[pickerView selectRow:2 inComponent:0 animated:YES];
     
     // OK, we are ready. Add the picker in our view.
-    [self.view addSubview: pickerView];
+  //  [self.view addSubview: pickerView];
 
 
     self.dogNameField.delegate = self;

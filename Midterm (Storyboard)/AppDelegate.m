@@ -21,7 +21,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     _dummyDataManager = [[DummyDataManager alloc] initWithManagedObjectContext:self.managedObjectContext];
-    UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
+//    UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
 //    EventsListViewController *eventListVC = (EventsListViewController * )navController.topViewController;
 //    eventListVC.dummyDataManager = self.dummyDataManager;
     

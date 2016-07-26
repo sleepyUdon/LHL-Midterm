@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nn1-qQ-X2u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="36b-s6-V8Q">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -461,6 +461,12 @@
                                                 <constraint firstAttribute="bottom" secondItem="AvC-VL-vUj" secondAttribute="bottom" constant="10" id="xHx-fK-kCN"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventAddress" destination="ZS3-Dg-U2F" id="wFg-ja-9UY"/>
+                                            <outlet property="eventDate" destination="wBC-mY-bwa" id="sF6-JJ-mg9"/>
+                                            <outlet property="eventTitle" destination="12b-dd-K2a" id="LCJ-3j-cUQ"/>
+                                            <outlet property="petImage" destination="AvC-VL-vUj" id="kxx-9I-BzK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="default">
@@ -468,6 +474,10 @@
                                         <exclude reference="Hfx-9E-xBw"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="LfS-7z-iae" id="7Pj-f2-0Uc"/>
+                                    <outlet property="delegate" destination="LfS-7z-iae" id="VB7-En-gvH"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Meetups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQB-na-rjE">
                                 <rect key="frame" x="0.0" y="64" width="600" height="47"/>
@@ -507,6 +517,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="Xlt-7M-7Br" id="k9k-hn-Zjy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqR-do-9jD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -647,9 +660,23 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="fJl-D7-ydO">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="nY5-AZ-rxv"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="nY5-AZ-rxv">
+                            <connections>
+                                <action selector="saveData:" destination="Ez1-QG-yIV" id="OJY-Is-uu8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="eventAddress" destination="IC1-F4-isD" id="x5f-Nn-wZI"/>
+                        <outlet property="eventDate" destination="Sz4-jW-WR9" id="Dxz-PA-UjF"/>
+                        <outlet property="eventTitle" destination="eCX-dR-2UC" id="n6V-vE-Mjy"/>
+                        <outlet property="organizer" destination="jMH-un-rAX" id="svn-7S-0gV"/>
+                        <outlet property="petImageView" destination="39e-Q6-sys" id="N8e-j8-ps9"/>
+                        <outlet property="petName" destination="NOc-nJ-g7J" id="FdN-1l-qbs"/>
+                        <outlet property="scrollView" destination="Hif-TF-pS7" id="uT1-g7-Jho"/>
+                        <outlet property="shortDescription" destination="4QB-9n-ida" id="2zA-EN-BEM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rjd-tm-xdr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -667,7 +694,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dnF-HU-LRa">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dnF-HU-LRa">
                                 <rect key="frame" x="0.0" y="139" width="600" height="461"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:00PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LW5-Fc-6VJ">
@@ -680,7 +707,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m59-bd-WEN">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="m59-bd-WEN">
                                         <rect key="frame" x="5" y="320" width="590" height="121"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="aHl-u8-dRq"/>
@@ -721,6 +748,9 @@
                                             <mask key="constraints">
                                                 <exclude reference="aHl-u8-dRq"/>
                                             </mask>
+                                        </variation>
+                                        <variation key="heightClass=compact-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="5" y="320" width="390" height="121"/>
                                         </variation>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boxers Meetup" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPt-Pa-TiE">
@@ -784,7 +814,7 @@
                                     <constraint firstItem="uiY-RI-ISC" firstAttribute="leading" secondItem="dnF-HU-LRa" secondAttribute="leading" constant="10" id="vmo-Mw-V1n"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhR-dZ-Hnq" userLabel="Picture">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhR-dZ-Hnq" userLabel="Picture">
                                 <rect key="frame" x="20" y="64" width="75" height="75"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boxer profile picture" translatesAutoresizingMaskIntoConstraints="NO" id="WHA-to-3qJ">
@@ -801,7 +831,7 @@
                                     <constraint firstAttribute="height" constant="75" id="lJ2-fw-Rur"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rocky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyY-sC-6sP">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rocky" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HyY-sC-6sP">
                                 <rect key="frame" x="105" y="100" width="169" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="QP2-lx-ndQ"/>
@@ -810,7 +840,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organizer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRZ-Nb-rNN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Organizer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRZ-Nb-rNN">
                                 <rect key="frame" x="105" y="74" width="169" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="qUV-jn-l7N"/>

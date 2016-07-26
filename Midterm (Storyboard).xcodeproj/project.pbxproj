@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44CF4BCB1D47FBF90052EAA2 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CF4BCA1D47FBF90052EAA2 /* Event+CoreDataProperties.m */; };
 		7CF89F611D4380F100907DE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89F601D4380F100907DE3 /* main.m */; };
 		7CF89F641D4380F100907DE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89F631D4380F100907DE3 /* AppDelegate.m */; };
 		7CF89F701D4380F100907DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF89F6E1D4380F100907DE3 /* Main.storyboard */; };
@@ -27,7 +28,6 @@
 		7CF89FCE1D4675D200907DE3 /* UserProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FCD1D4675D200907DE3 /* UserProfileTableViewCell.m */; };
 		7CF89FD81D468E0600907DE3 /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FD51D468E0600907DE3 /* User+CoreDataProperties.m */; };
 		7CF89FD91D468E0600907DE3 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FD71D468E0600907DE3 /* User.m */; };
-		7CF89FDE1D46963D00907DE3 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FDB1D46963D00907DE3 /* Event+CoreDataProperties.m */; };
 		7CF89FDF1D46963D00907DE3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FDD1D46963D00907DE3 /* Event.m */; };
 		7CF89FE21D46CC7500907DE3 /* DummyDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FE11D46CC7500907DE3 /* DummyDataManager.m */; };
 		7CF89FE41D46F84200907DE3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF89FE31D46F84200907DE3 /* MapKit.framework */; };
@@ -51,6 +51,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44CF4BC91D47FBF90052EAA2 /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
+		44CF4BCA1D47FBF90052EAA2 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
 		7CF89F5C1D4380F100907DE3 /* Midterm (Storyboard).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Midterm (Storyboard).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF89F601D4380F100907DE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7CF89F621D4380F100907DE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,8 +92,6 @@
 		7CF89FD51D468E0600907DE3 /* User+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "User+CoreDataProperties.m"; sourceTree = "<group>"; };
 		7CF89FD61D468E0600907DE3 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		7CF89FD71D468E0600907DE3 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		7CF89FDA1D46963D00907DE3 /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
-		7CF89FDB1D46963D00907DE3 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
 		7CF89FDC1D46963D00907DE3 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		7CF89FDD1D46963D00907DE3 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		7CF89FE01D46CC7500907DE3 /* DummyDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DummyDataManager.h; path = "Midterm (Storyboard)/DummyDataManager.h"; sourceTree = "<group>"; };
@@ -191,10 +191,10 @@
 		7CF89FB11D46736E00907DE3 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				7CF89FDA1D46963D00907DE3 /* Event+CoreDataProperties.h */,
-				7CF89FDB1D46963D00907DE3 /* Event+CoreDataProperties.m */,
 				7CF89FDC1D46963D00907DE3 /* Event.h */,
 				7CF89FDD1D46963D00907DE3 /* Event.m */,
+				44CF4BC91D47FBF90052EAA2 /* Event+CoreDataProperties.h */,
+				44CF4BCA1D47FBF90052EAA2 /* Event+CoreDataProperties.m */,
 				7CF89FD41D468E0600907DE3 /* User+CoreDataProperties.h */,
 				7CF89FD51D468E0600907DE3 /* User+CoreDataProperties.m */,
 				7CF89FD61D468E0600907DE3 /* User.h */,
@@ -414,7 +414,7 @@
 			files = (
 				7CF89FB41D4673F300907DE3 /* LoginViewController.m in Sources */,
 				7CF89FD91D468E0600907DE3 /* User.m in Sources */,
-				7CF89FDE1D46963D00907DE3 /* Event+CoreDataProperties.m in Sources */,
+				44CF4BCB1D47FBF90052EAA2 /* Event+CoreDataProperties.m in Sources */,
 				7CF89FCE1D4675D200907DE3 /* UserProfileTableViewCell.m in Sources */,
 				7CF89FAE1D46736900907DE3 /* Dog.m in Sources */,
 				7CF89FCB1D4675A400907DE3 /* UserProfileViewController.m in Sources */,
