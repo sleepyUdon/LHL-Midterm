@@ -2,7 +2,7 @@
 //  Event+CoreDataProperties.h
 //  Midterm (Storyboard)
 //
-//  Created by Viviane Chan on 2016-07-25.
+//  Created by Viviane Chan on 2016-07-26.
 //  Copyright © 2016 LightHouse Labs. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -18,9 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *eventAddress;
 @property (nullable, nonatomic, retain) NSDate *eventDate;
 @property (nullable, nonatomic, retain) NSString *eventDescription;
-@property (nullable, nonatomic, retain) NSString *eventTitle;
 @property (nullable, nonatomic, retain) NSString *eventOrganizer;
+@property (nullable, nonatomic, retain) NSString *eventTitle;
 @property (nullable, nonatomic, retain) NSSet<Dog *> *dog;
+@property (nullable, nonatomic, retain) Dog *mainDog;
 
 @end
 
