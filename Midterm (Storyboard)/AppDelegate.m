@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "DummyDataManager.h"
+#import "EventsListViewController.h"
+
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -16,6 +19,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    _dummyDataManager = [[DummyDataManager alloc] initWithManagedObjectContext:self.managedObjectContext];
+    UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
+    EventsListViewController *eventListVC = (EventsListViewController * )navController.topViewController;
+    eventListVC.dummyDataManager = self.dummyDataManager;
+    
     return YES;
 }
 

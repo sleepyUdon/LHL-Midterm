@@ -9,13 +9,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+@class Event;
 
 
 @interface DummyDataManager : NSObject
-
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-
-
-
+- (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)context;
+// all of your fetch and save methods
+- (NSArray<Event *> *)fetchAllEvents;
 @end

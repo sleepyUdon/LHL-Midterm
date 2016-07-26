@@ -9,16 +9,48 @@
 #import "DummyDataManager.h"
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
+#import "Event.h"
 
+@interface DummyDataManager()
+@property (nonatomic, strong) NSManagedObjectContext *context;
+
+@end
 
 @implementation DummyDataManager
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+-(instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)context {
+    if (self = [super init]) {
+        _context = context;
+        [self createDataIfNeeded];
+    }
+    return self;
+}
+
+- (void)createDataIfNeeded {
+    NSInteger fetchCount = 
+    
+    
+    - (NSUInteger)countForFetchRequest:(NSFetchRequest *)request
+error:(NSError * _Nullable *)error
+    Pa
+    // fetch on the context for the count.
+    
+    // If the fetch returns zero then create data
+    
+    
+    if (!fetchCount) {
+        [self createDummyData];
+    }
+}
+
+- (void)createDummyData {
+    
+    // create all objects and save them to the database
 
     NSEntityDescription *dogEntityDescription = [NSEntityDescription entityForName:@"Dog"
-                                                         inManagedObjectContext:self.managedObjectContext];
+                                                         inManagedObjectContext:self.context];
     NSManagedObject *dog1 = [[NSManagedObject alloc] initWithEntity:dogEntityDescription
-                                          insertIntoManagedObjectContext:self.managedObjectContext];
+                                          insertIntoManagedObjectContext:self.context];
     
     
     [dog1 setValue:@"Rocky" forKey:@"dogName"];
@@ -32,9 +64,9 @@
     
     
     NSEntityDescription *eventEntityDescription = [NSEntityDescription entityForName:@"Event"
-                                                            inManagedObjectContext:self.managedObjectContext];
+                                                            inManagedObjectContext:self.context];
     NSManagedObject *event1 = [[NSManagedObject alloc] initWithEntity:eventEntityDescription
-                                     insertIntoManagedObjectContext:self.managedObjectContext];
+                                     insertIntoManagedObjectContext:self.context];
     
     
     [event1 setValue:@"275 Bathurst Street" forKey:@"eventAddress"];
@@ -44,7 +76,7 @@
     
     
     NSManagedObject *event2 = [[NSManagedObject alloc] initWithEntity:eventEntityDescription
-                                       insertIntoManagedObjectContext:self.managedObjectContext];
+                                       insertIntoManagedObjectContext:self.context];
     
     
     [event2 setValue:@"275 Bathurst Street" forKey:@"eventAddress"];
@@ -63,9 +95,10 @@
         NSLog(@"Unable to save managed object context.");
         NSLog(@"%@, %@", error, error.localizedDescription);
     }
-    
-    
-    return YES;
+}
+
+- (NSArray<Event *> *)fetchAllEvents {
+    return nil;
 }
 
 

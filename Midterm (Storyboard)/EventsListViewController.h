@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DummyDataManager.h"
 
 @interface EventsListViewController : UIViewController
-
+@property (nonatomic, strong) DummyDataManager *dummyDataManager;
 @end
