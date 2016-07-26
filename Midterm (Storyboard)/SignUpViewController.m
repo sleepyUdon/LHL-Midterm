@@ -50,47 +50,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UIPickerView *picker = [[UIPickerView alloc] init];
-    // Init the data array.
-    dataArray = [[NSMutableArray alloc] init];
+    //gender pickerview
     
-    // Add some data for demo purposes.
-    [dataArray addObject:@"One"];
-    [dataArray addObject:@"Two"];
-    [dataArray addObject:@"Three"];
-    [dataArray addObject:@"Four"];
-    [dataArray addObject:@"Five"];
+    UIPickerView *pickerView = [[UIPickerView alloc] init];
+    self.dataArray = @[@"Female",@"Male"];
     
-    // Calculate the screen's width.
     float screenWidth = [UIScreen mainScreen].bounds.size.width;
     float pickerWidth = screenWidth * 3 / 4;
-    
-    // Calculate the starting x coordinate.
     float xPoint = screenWidth / 2 - pickerWidth / 2;
     
-    // Init the picker view.
-    pickerView = [[UIPickerView alloc] init];
-    
-    // Set the delegate and datasource. Don't expect picker view to work
-    // correctly if you don't set it.
     [pickerView setDataSource: self];
     [pickerView setDelegate: self];
     
-    // Set the picker's frame. We set the y coordinate to 50px.
-    [pickerView setFrame: CGRectMake(xPoint, 50.0f, pickerWidth, 200.0f)];
-    
-    // Before we add the picker view to our view, let's do a couple more
-    // things. First, let the selection indicator (that line inside the
-    // picker view that highlights your selection) to be shown.
+    [pickerView setFrame: CGRectMake(xPoint, 0, pickerWidth, 100)];
+    pickerView.backgroundColor = [UIColor whiteColor];
     pickerView.showsSelectionIndicator = YES;
+    self.dogSexField.inputView = pickerView;
     
-    // Allow us to pre-select the third option in the pickerView.
-    [pickerView selectRow:2 inComponent:0 animated:YES];
+    //date picker
+    UIDatePicker *datePicker = [[UIDatePicker alloc]init];
+    datePicker.
+    [datePicker setDate:[NSDate date]];
+    [datePicker addTarget:self action:@selector(onDatePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
+    self.dogBirthDateField.inputView = datePicker;
+
     
-    // OK, we are ready. Add the picker in our view.
-    [self.view addSubview: pickerView];
 
 
+    
+    // textfields
+    
     self.dogNameField.delegate = self;
     self.dogBreedField.delegate = self;
     self.dogSexField.delegate = self;
@@ -105,18 +94,32 @@
 
 }
 
+#pragma Setup Date Picker
 
-#pragma Setup Picker
+- (void)onDatePickerValueChanged:(UIDatePicker *)sender {
+    UIDatePicker *picker = [[UIDatePicker alloc]init];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-mm-dd"];
+    self.dogBirthDateField.text = [dateFormatter stringFromDate:picker.date];
+}
+
+
+#pragma Setup Gender Picker
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
-    return 2;
-}
-- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     return 1;
 }
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    return 2;
+}
 
-#pragma SetupTextfield
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    return [self.dataArray objectAtIndex: row];
+}
 
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    self.dogSexField.text = [self.dataArray objectAtIndex:row];
+}
 
 
 
@@ -185,9 +188,11 @@
     dog.dogName = self.dogNameField.text;
     dog.dogGender = self.dogSexField.text;
     
-
-// date picker
-
+    
+    //convert NSdate to NSString
+    
+    dog.dogBOD = self.dogBirthDateField.text;
+    
     dog.dogOwner = self.dogOwnerField.text;
     dog.dogDescription = self.dogDescriptionField.text;
     dog.dogLocation = self.dogUserNameField.text;
