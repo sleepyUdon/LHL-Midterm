@@ -23,8 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
-    DummyDataManager *dataManager = [[DummyDataManager alloc]initWithManagedObjectContext:context];
+   DummyDataManager *dataManager = ((AppDelegate *)[UIApplication sharedApplication].delegate).dummyDataManager;
     self.eventsArray = dataManager.fetchAllEvents;
 }
 
@@ -67,7 +66,7 @@
     //}
     Dog *dogPath = event.mainDog;
     
-    cell.petImage.image = [ UIImage imageWithData:dogPath.dogPicture ];
+    cell.petImage.image = [UIImage imageWithData:dogPath.dogPicture];
     cell.eventTitle.text = event.eventTitle;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
