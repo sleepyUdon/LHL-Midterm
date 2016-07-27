@@ -16,6 +16,7 @@
         <attribute name="eventAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="eventDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eventImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventOrganizer" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="eventTitle" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="dog" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="Dog" inverseName="event" inverseEntity="Dog" syncable="YES"/>
@@ -29,7 +30,7 @@
     </entity>
     <elements>
         <element name="Dog" positionX="-54" positionY="-9" width="128" height="193"/>
-        <element name="Event" positionX="-342" positionY="9" width="128" height="148"/>
+        <element name="Event" positionX="-342" positionY="9" width="128" height="165"/>
         <element name="User" positionX="-36" positionY="9" width="128" height="105"/>
     </elements>
 </model>
