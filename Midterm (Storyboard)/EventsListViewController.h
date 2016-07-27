@@ -11,7 +11,7 @@
 #import "DummyDataManager.h"
 
 @interface EventsListViewController : UIViewController
-@property (nonatomic, strong) DummyDataManager *dummyDataManager;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSFetchedResultsController *fetchResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

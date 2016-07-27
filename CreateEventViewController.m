@@ -8,6 +8,7 @@
 
 #import "CreateEventViewController.h"
 #import "Event.h"
+#import "Dog.h"
 #import "AppDelegate.h"
 
 @interface CreateEventViewController ()
@@ -38,6 +39,12 @@
     newEvent.eventAddress = self.eventAddress.text;
     newEvent.eventOrganizer = self.organizer.text;
     newEvent.eventDate = self.datePicker.date;
+    
+    Dog *dog = [NSEntityDescription insertNewObjectForEntityForName:@"Dog" inManagedObjectContext:context];
+    self.petImageView.image = [UIImage imageNamed:@"dog.png"];
+    NSData* petPicture = UIImagePNGRepresentation(self.petImageView.image);
+    dog.dogPicture = petPicture;
+    
     [context save:nil];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
