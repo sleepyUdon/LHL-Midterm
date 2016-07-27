@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *dogPictureView;
-
 @property (weak, nonatomic) IBOutlet UITextField *dogNameField;
 @property (weak, nonatomic) IBOutlet UITextField *dogBreedField;
 @property (weak, nonatomic) IBOutlet UITextField *dogSexField;
@@ -34,11 +33,16 @@
 
 @property UITextField *activeField;
 
-//@property (strong,nonatomic) NSArray *dataArray;
+@property (strong,nonatomic) NSArray *dataArray;
 
 @property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
 
 @property (nonatomic) CGFloat scrollViewCenterConstant;
+
+@property (strong, nonatomic)UIDatePicker *datePicker;
+
+@property (weak, nonatomic) IBOutlet UIButton *cameraButton;
+
 
 
 @end
@@ -50,7 +54,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //gender pickerview
+    //setup gender pickerview
+    
+    self.scrollView.bounces = NO;
     
     UIPickerView *pickerView = [[UIPickerView alloc] init];
     self.dataArray = @[@"Female",@"Male"];
@@ -73,12 +79,17 @@
     [datePicker addTarget:self action:@selector(onDatePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
     self.dogBirthDateField.inputView = datePicker;
 
+    //setup date picker
     
-
+    self.datePicker = [[UIDatePicker alloc]init];
+    [self.datePicker setDatePickerMode:UIDatePickerModeDate];
+    [self.datePicker setDate:[NSDate date]];
+    [self.datePicker addTarget:self action:@selector(onDatePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
+    self.dogBirthDateField.inputView = self.datePicker;
 
 
     
-    // textfields
+    // setup textfields
     
     self.dogNameField.delegate = self;
     self.dogBreedField.delegate = self;
@@ -94,7 +105,7 @@
 
 }
 
-#pragma Setup Date Picker
+#pragma Date Picker - udpate textfield
 
 - (void)onDatePickerValueChanged:(UIDatePicker *)sender {
     UIDatePicker *picker = [[UIDatePicker alloc]init];
@@ -104,7 +115,7 @@
 }
 
 
-#pragma Setup Gender Picker
+#pragma gender picker - datasource
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
@@ -185,14 +196,10 @@
     Dog *dog = [NSEntityDescription insertNewObjectForEntityForName:@"Dog" inManagedObjectContext:self.managedObjectContext];
     
 //    dog.dogPicture = self.dogPictureView.image;
+    
     dog.dogName = self.dogNameField.text;
     dog.dogGender = self.dogSexField.text;
-    
-    
-    //convert NSdate to NSString
-    
-    dog.dogBOD = self.dogBirthDateField.text;
-    
+    dog.dogBOD = self.datePicker.date;
     dog.dogOwner = self.dogOwnerField.text;
     dog.dogDescription = self.dogDescriptionField.text;
     dog.dogLocation = self.dogUserNameField.text;
@@ -206,7 +213,7 @@
     
     NSError *error = nil;
     
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
     
     if (![self.managedObjectContext save:&error]) {
         NSLog(@"error saving: %@", error.localizedDescription);
@@ -230,6 +237,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
     UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.dogPictureView.hidden = NO;
     self.dogPictureView.image = chosenImage;
     
     [picker dismissViewControllerAnimated:YES completion:nil];

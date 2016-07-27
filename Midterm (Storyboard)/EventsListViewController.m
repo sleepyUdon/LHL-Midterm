@@ -94,6 +94,4 @@
 //    NSLog(@"%@",self.eventsArray);
 //}
 
-
-
 @end
