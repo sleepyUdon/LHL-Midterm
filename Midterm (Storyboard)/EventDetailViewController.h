@@ -16,5 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *eventTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventOrganizerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *eventDateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *organizerImageView;
+@property (weak, nonatomic) IBOutlet UITextView *eventDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end

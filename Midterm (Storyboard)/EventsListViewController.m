@@ -74,7 +74,7 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm"];
     NSString *formattedDate = [dateFormatter stringFromDate:event.eventDate];
     
-    NSLog(@"%@",event.eventDate);
+    //NSLog(@"%@",event.eventDate);
     
     cell.eventDate.text = formattedDate;
     cell.eventAddress.text = event.eventAddress;
