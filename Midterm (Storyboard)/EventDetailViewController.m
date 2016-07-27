@@ -9,14 +9,17 @@
 #import "EventDetailViewController.h"
 @import CoreLocation;
 @import MapKit;
+@import UIKit;
+#import "CollectionViewCell.h"
+#import "Dog.h"
 
 
-@interface EventDetailViewController () <CLLocationManagerDelegate, MKMapViewDelegate>
+@interface EventDetailViewController () <MKMapViewDelegate>
 
-@property (strong, nonatomic) CLLocationManager *locationManager;
+
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (assign, nonatomic) BOOL shouldZoomIntoUser;
-@property (strong,nonatomic) MKPlacemark *placemark;
+@property (strong, nonatomic) NSArray *dogsInEvent;
 
 @end
 
@@ -26,27 +29,14 @@
     [super viewDidLoad];
     
     self.eventTitleLabel.text = self.event.eventTitle;
-    self.eventOrganizerLabel.text = [NSString stringWithFormat:@"Organized by: %@ ", self.event.eventOrganizer];
-    self.eventDateLabel.text = [NSString stringWithFormat:@"On : %@ ", self.event.eventDate];
-    
-    self.shouldZoomIntoUser = YES;
-    
-    self.locationManager = [[CLLocationManager alloc] init];
-    self.locationManager.delegate = self;
+    self.eventOrganizerLabel.text = self.event.eventOrganizer;
+//    self.organizerImageView.image = 
+//    self.eventDateLabel.text = [NSString stringWithFormat:@"On : %@ ", self.event.eventDate];
+    self.eventDescriptionLabel.text = self.event.eventDescription;
     
     self.mapView.delegate = self;
-    //   self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    //   self.locationManager.distanceFilter = 50;
     
-    if ([CLLocationManager locationServicesEnabled]) {
-        
-        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined) {
-            
-            [self.locationManager requestWhenInUseAuthorization];
-        }
-        
-    }
-    
+   self.dogsInEvent = [self.event.dog allObjects];
     
     [self showEventMap];
     
@@ -58,44 +48,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - CLLocationManagerDelegate
 
-- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
-    NSLog(@"Authorization Changed to: %d", status);
-    
-    if (status == kCLAuthorizationStatusAuthorizedWhenInUse) {
-        NSLog(@"Authorized!");
-        
-        self.mapView.showsUserLocation = YES;
-        self.mapView.showsPointsOfInterest = YES;
-        
-        [self.locationManager startUpdatingLocation];
-        
-        //[self.locationM anager requestLocation];
-    }
-}
-
-- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    NSLog(@"New locations: %@", locations);
-    // [self.locationManager stopUpdatingLocation]
-    
-    CLLocation *location = [locations lastObject];
-    
-    if (self.shouldZoomIntoUser) {
-        self.shouldZoomIntoUser = NO;
-        
-        CLLocationCoordinate2D coordinate = location.coordinate;
-        
-        MKCoordinateRegion region = MKCoordinateRegionMake(coordinate, MKCoordinateSpanMake(0.001, 0.001));
-        [self.mapView setRegion:region animated:YES];
-    }
-}
-
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    NSLog(@"Location error: %@", error.localizedDescription);
-}
-
-#pragma mark - Geocode
+#pragma mark - Show Map
 
 - (void)showEventMap
 {
@@ -108,19 +62,66 @@
             CLPlacemark *topResult = [placemarks objectAtIndex:0];
             
             MKPlacemark *placemark = [[MKPlacemark alloc]initWithPlacemark:topResult];
-            self.placemark = placemark;
             
-            CLLocationCoordinate2D center = CLLocationCoordinate2DMake(self.placemark.coordinate.latitude,self.placemark.coordinate.longitude);
+            CLLocationCoordinate2D center = CLLocationCoordinate2DMake(placemark.coordinate.latitude,placemark.coordinate.longitude);
             
             MKCoordinateSpan span = MKCoordinateSpanMake(0.05, 0.05);
             MKCoordinateRegion regionToDisplay = MKCoordinateRegionMake(center, span);
             [self.mapView setRegion:regionToDisplay];
             
-            [self.mapView addAnnotation:self.placemark];
+            [self.mapView addAnnotation:placemark];
             
         }}];
     
 }
+
+
+- (MKAnnotationView *)mapView:(MKMapView *)map viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    static NSString *annotationViewReuseIdentifier = @"annotationViewReuseIdentifier";
+    
+    MKAnnotationView *annotationView = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:annotationViewReuseIdentifier];
+    
+    if (annotationView == nil)
+    {
+        annotationView = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:annotationViewReuseIdentifier];
+    }
+    
+    annotationView.image = [UIImage imageNamed:@"rsz_dog-100"];
+    annotationView.annotation = annotation;
+    annotationView.canShowCallout = YES;
+    
+    return annotationView;
+}
+
+
+
+#pragma mark - Collection View
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView {
+    // _data is a class member variable that contains one array per section.
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView*)collectionView numberOfItemsInSection:(NSInteger)section {
+
+    return [self.event.dog count]; // get dogs from relationship event-dog
+
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                  cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+
+    CollectionViewCell *cvCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"participantCell" forIndexPath:(NSIndexPath *)indexPath];
+    
+    Dog *dog = self.dogsInEvent[indexPath.item];
+    
+    cvCell.participantImageview.image = [UIImage imageWithData:dog.dogPicture];
+    
+    return cvCell;
+    
+}
+
 
 
 @end

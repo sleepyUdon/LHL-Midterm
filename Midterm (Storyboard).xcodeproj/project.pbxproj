@@ -31,7 +31,7 @@
 		7CF89FDF1D46963D00907DE3 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FDD1D46963D00907DE3 /* Event.m */; };
 		7CF89FE21D46CC7500907DE3 /* DummyDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FE11D46CC7500907DE3 /* DummyDataManager.m */; };
 		7CF89FE41D46F84200907DE3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF89FE31D46F84200907DE3 /* MapKit.framework */; };
-		7CF89FE71D48171900907DE3 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FE61D48171900907DE3 /* Event+CoreDataProperties.m */; };
+		A779E2421D4903A8003D1EEB /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A779E2411D4903A8003D1EEB /* CollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +100,8 @@
 		7CF89FE31D46F84200907DE3 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		7CF89FE51D48171900907DE3 /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
 		7CF89FE61D48171900907DE3 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
+		A779E2401D4903A8003D1EEB /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		A779E2411D4903A8003D1EEB /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +262,8 @@
 			children = (
 				7CF89FBF1D46752900907DE3 /* EventDetailViewController.h */,
 				7CF89FC01D46752900907DE3 /* EventDetailViewController.m */,
+				A779E2401D4903A8003D1EEB /* CollectionViewCell.h */,
+				A779E2411D4903A8003D1EEB /* CollectionViewCell.m */,
 			);
 			name = "Event Detail";
 			sourceTree = "<group>";
@@ -423,6 +427,7 @@
 				7CF89FCE1D4675D200907DE3 /* UserProfileTableViewCell.m in Sources */,
 				7CF89FAE1D46736900907DE3 /* Dog.m in Sources */,
 				7CF89FCB1D4675A400907DE3 /* UserProfileViewController.m in Sources */,
+				A779E2421D4903A8003D1EEB /* CollectionViewCell.m in Sources */,
 				7CF89FDF1D46963D00907DE3 /* Event.m in Sources */,
 				7CF89F9E1D466CE500907DE3 /* CoreData.xcdatamodeld in Sources */,
 				7CF89FE21D46CC7500907DE3 /* DummyDataManager.m in Sources */,
