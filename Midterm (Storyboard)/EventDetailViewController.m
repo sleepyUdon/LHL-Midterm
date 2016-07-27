@@ -32,11 +32,16 @@
     self.eventOrganizerLabel.text = self.event.eventOrganizer;
 //    self.organizerImageView.image = 
 //    self.eventDateLabel.text = [NSString stringWithFormat:@"On : %@ ", self.event.eventDate];
+    
+    Dog *mainDog = self.event.mainDog;
+    
+    self.organizerImageView.image = [UIImage imageWithData:mainDog.dogPicture];
+    
     self.eventDescriptionLabel.text = self.event.eventDescription;
     
     self.mapView.delegate = self;
     
-   self.dogsInEvent = [self.event.dog allObjects];
+    self.dogsInEvent = [self.event.dog allObjects];
     
     [self showEventMap];
     
