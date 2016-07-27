@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSManagedObjectContext *context;
 @property (nonatomic,strong)  NSEntityDescription *dogEntityDescription;
 @property (nonatomic, strong) NSArray *eventsArray;
+@property (nonatomic,strong) NSArray *usersArray;
 
 @end
 
@@ -261,6 +262,19 @@
     return self.eventsArray;
 }
 
+#pragma mark - Fetching all users
+
+- (NSArray<User *> *)fetchAllUsers {
+    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    
+    //sort an array
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"userName" ascending:YES];
+    [request setSortDescriptors:@[sortDescriptor]];
+    self.usersArray = [context executeFetchRequest:request error:nil];
+    //NSLog(@"%@",self.eventsArray);
+    return self.usersArray;
+}
 
 
 @end

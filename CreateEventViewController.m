@@ -9,7 +9,9 @@
 #import "CreateEventViewController.h"
 #import "Event.h"
 #import "Dog.h"
+#import "User.h"
 #import "AppDelegate.h"
+#import "DummyDataManager.h"
 
 @interface CreateEventViewController ()
 
@@ -17,6 +19,7 @@
 @property (nonatomic) NSString *dateFormat;
 @property UITextField *activeField;
 @property (nonatomic) CGFloat scrollViewCenterConstant;
+@property (nonatomic) NSArray *usersArray;
 
 @end
 
@@ -26,6 +29,22 @@
     [super viewDidLoad];
     [self setUpDatePicker];
     [self registerForKeyboardNotifications];
+    [self userImageSetup];
+    [self userImageSetup];
+
+}
+
+#pragma mark - Setup User image
+
+- (void)userImageSetup {
+    DummyDataManager *dataManager = ((AppDelegate *)[UIApplication sharedApplication].delegate).dummyDataManager;
+    self.usersArray = dataManager.fetchAllUsers;
+    int32_t random = arc4random_uniform((unsigned)self.usersArray.count);
+    User *randomUser = [self.usersArray objectAtIndex:random];;
+    Dog *dogPath = randomUser.dog;
+    self.petImageView.image = [UIImage imageWithData:dogPath.dogPicture];
+    self.petName.text = dogPath.dogOwner;
+    
 }
 
 #pragma mark - Save method
