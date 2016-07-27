@@ -22,6 +22,8 @@
 
 @implementation DummyDataManager
 
+#pragma mark - Initializer
+
 -(instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)context {
     if (self = [super init]) {
         _context = context;
@@ -29,6 +31,8 @@
     }
     return self;
 }
+
+#pragma mark - Creation of dummy data
 
 - (void)createDataIfNeeded {
     
@@ -43,11 +47,14 @@
 
 - (void)createDummyData {
 
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    /********************************************Dog schema**************************************/
+    
+    NSDateFormatter *dogDateFormatter = [[NSDateFormatter alloc] init];
+    [dogDateFormatter setDateFormat:@"yyyy-MM-dd"];
     Dog *dog1 = [NSEntityDescription insertNewObjectForEntityForName:@"Dog" inManagedObjectContext:self.context];
     
     dog1.dogName = @"Rocky";
-    dog1.dogBOD = [dateFormatter dateFromString:@"2009-01-01"];
+    dog1.dogBOD = [dogDateFormatter dateFromString:@"2009-01-01"];
     dog1.dogBreed = @"Boxer";
     dog1.dogDescription = @"Love the park";
     dog1.dogGender = @"Male";
@@ -58,7 +65,7 @@
     Dog *dog2 = [NSEntityDescription insertNewObjectForEntityForName:@"Dog" inManagedObjectContext:self.context];
     
     dog2.dogName = @"Maddy";
-    dog2.dogBOD = [dateFormatter dateFromString:@"01-02-2016"];
+    dog2.dogBOD = [dogDateFormatter dateFromString:@"2016-01-02"];
     dog2.dogBreed = @"Pomeranian";
     dog2.dogDescription = @"Hyperactive";
     dog2.dogGender = @"Female";
@@ -69,7 +76,7 @@
     Dog *dog3 = [NSEntityDescription insertNewObjectForEntityForName:@"Dog" inManagedObjectContext:self.context];
     
     dog3.dogName = @"Chutes";
-    dog3.dogBOD = [dateFormatter dateFromString:@"01-02-2010"];
+    dog3.dogBOD = [dogDateFormatter dateFromString:@"2010-01-02"];
     dog3.dogBreed = @"Boston Terrier";
     dog3.dogDescription = @"Sleepy";
     dog3.dogGender = @"Male";
@@ -80,7 +87,7 @@
     Dog *dog4 = [NSEntityDescription insertNewObjectForEntityForName:@"Dog" inManagedObjectContext:self.context];
     
     dog4.dogName = @"Buzzer";
-    dog4.dogBOD = [dateFormatter dateFromString:@"08-09-2014"];
+    dog4.dogBOD = [dogDateFormatter dateFromString:@"2014-08-09"];
     dog4.dogBreed = @"Jack Russel";
     dog4.dogDescription = @"Loves the outdoors";
     dog4.dogGender = @"Male";
@@ -91,7 +98,7 @@
     Dog *dog5 = [NSEntityDescription insertNewObjectForEntityForName:@"Dog" inManagedObjectContext:self.context];
     
     dog5.dogName = @"Luna";
-    dog5.dogBOD = [dateFormatter dateFromString:@"01-02-2010"];
+    dog5.dogBOD = [dogDateFormatter dateFromString:@"2010-01-02"];
     dog5.dogBreed = @"Labrador Retriever";
     dog5.dogDescription = @"Hyperactive";
     dog5.dogGender = @"Female";
@@ -102,7 +109,7 @@
     Dog *dog6 = [NSEntityDescription insertNewObjectForEntityForName:@"Dog" inManagedObjectContext:self.context];
     
     dog6.dogName = @"Gruff";
-    dog6.dogBOD = [dateFormatter dateFromString:@"01-04-2015"];
+    dog6.dogBOD = [dogDateFormatter dateFromString:@"2015-01-04"];
     dog6.dogBreed = @"Rottweiller";
     dog6.dogDescription = @"Loves cats";
     dog6.dogGender = @"Female";
@@ -113,13 +120,16 @@
     Dog *dog7 = [NSEntityDescription insertNewObjectForEntityForName:@"Dog" inManagedObjectContext:self.context];
     
     dog7.dogName = @"Square";
-    dog7.dogBOD = [dateFormatter dateFromString:@"06-05-2016"];
+    dog7.dogBOD = [dogDateFormatter dateFromString:@"2016-06-05"];
     dog7.dogBreed = @"Mascot";
     dog7.dogDescription = @"Mascot";
     dog7.dogGender = @"Female";
     dog7.dogLocation = @"Toronto";
     dog7.dogOwner = @"Open Bark";
     dog7.dogPicture = UIImagePNGRepresentation([UIImage imageNamed:@"squarefacedpoodle"]);
+    
+    
+    /****************************************User schema***************************************/
     
     User *user1 = [NSEntityDescription insertNewObjectForEntityForName:@"User" inManagedObjectContext:self.context];
     
@@ -163,13 +173,19 @@
     user7.userName = @"Open Bark";
     user7.password = @"";
     user7.dog = dog7;
+    
+    
+    /**************************************Event schema*******************************************/
 
+    NSDateFormatter *eventDateFormatter = [[NSDateFormatter alloc] init];
+    [eventDateFormatter setDateFormat:@"yyyy-MM-dd hh:mm"];
+    
     
     Event *event1 = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.context];
     event1.eventTitle = @"Puppymon: Game of Bones ";
     event1.eventAddress = @"2000 Meadowvale Rd, Toronto, ON M1B 5K7";
     event1.eventOrganizer = @"Eug";
-    event1.eventDate = [dateFormatter dateFromString:@"2016-07-29 08:00"];
+    event1.eventDate = [eventDateFormatter dateFromString:@"2016-07-29 08:00"];
     event1.mainDog = dog1;
 
     [event1 addDogObject:dog1];
@@ -183,7 +199,7 @@
     event2.eventTitle = @"Yoga Mutts";
     event2.eventAddress = @"156 Jozo Weider Blvd, The Blue Mountains, ON L9Y 3Z2";
     event2.eventOrganizer = @"Viv";
-    event2.eventDate = [dateFormatter dateFromString:@"2016-07-29 12:30"];
+    event2.eventDate = [eventDateFormatter dateFromString:@"2016-07-29 12:30"];
     event2.mainDog = dog2;
     
     [event2 addDogObject:dog2];
@@ -195,7 +211,7 @@
     event3.eventTitle = @"Dawg Gone Eat";
     event3.eventAddress = @"7700 Hurontario Street, Unit 602, Brampton L6Y 4M3";
     event3.eventOrganizer = @"Rene";
-    event3.eventDate = [dateFormatter dateFromString:@"2016-07-29 18:00"];
+    event3.eventDate = [eventDateFormatter dateFromString:@"2016-07-29 18:00"];
     event3.mainDog = dog4;
     
     [event3 addDogObject:dog3];
@@ -208,7 +224,7 @@
     event4.eventTitle = @"Barktinder : Breed Dating";
     event4.eventAddress = @"14184 Niagara Parkway, Niagara-on-the-Lake, ON L0S 1J0";
     event4.eventOrganizer = @"Open Bark";
-    event4.eventDate = [dateFormatter dateFromString:@"2016-07-30 23:00"];
+    event4.eventDate = [eventDateFormatter dateFromString:@"2016-07-30 23:00"];
     event4.mainDog = dog7;
 
     [event4 addDogObject:dog1];
@@ -225,6 +241,8 @@
     }
     
 }
+
+#pragma mark - Fetching all events
 
 - (NSArray<Event *> *)fetchAllEvents {
     NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
