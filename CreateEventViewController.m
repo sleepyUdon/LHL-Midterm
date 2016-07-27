@@ -61,8 +61,12 @@
 }
 
 - (void)onDatePickerValueChanged:(UIDatePicker *)sender {
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm"];
+    
     UIDatePicker *picker = (UIDatePicker *)self.eventDate.inputView;
-    self.eventDate.text = [NSString stringWithFormat:@"%@",picker.date];
+    NSString *formattedDate = [dateFormatter stringFromDate:picker.date];
+    self.eventDate.text = formattedDate;
 }
 
 #pragma mark - Keyboard setup
