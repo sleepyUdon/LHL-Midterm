@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *eventAddress;
 @property (weak, nonatomic) IBOutlet UIImageView *petImage;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundCell;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end

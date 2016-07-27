@@ -82,7 +82,6 @@
     return cell;
 }
 
-
 //- (void)fetchingData {
 //    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
 //    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
