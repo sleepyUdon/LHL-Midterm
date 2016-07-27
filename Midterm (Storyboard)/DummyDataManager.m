@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSManagedObjectContext *context;
 @property (nonatomic,strong)  NSEntityDescription *dogEntityDescription;
 @property (nonatomic, strong) NSArray *eventsArray;
+@property (nonatomic,strong) NSArray *usersArray;
 
 @end
 
@@ -41,7 +42,7 @@
 //    NSFetchRequest *request = [[NSFetchRequest alloc] init];
 //    NSUInteger fetchCount = [self.context countForFetchRequest:request error:&error];
     if ([self fetchAllEvents].count == 0) {
-    [self createDummyData];
+        [self createDummyData];
     }
 }
 
@@ -178,14 +179,16 @@
     /**************************************Event schema*******************************************/
 
     NSDateFormatter *eventDateFormatter = [[NSDateFormatter alloc] init];
-    [eventDateFormatter setDateFormat:@"yyyy-MM-dd hh:mm"];
+    [eventDateFormatter setDateFormat:@"yyyy-MM-dd hh:mm a"];
+    //[eventDateFormatter setLocale:[NSLocale localeWithLocaleIdentifier:@"en_US_POSIX"]];
     
     
     Event *event1 = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.context];
     event1.eventTitle = @"Puppymon: Game of Bones ";
     event1.eventAddress = @"2000 Meadowvale Rd, Toronto, ON M1B 5K7";
     event1.eventOrganizer = @"Eug";
-    event1.eventDate = [eventDateFormatter dateFromString:@"2016-07-29 08:00"];
+    event1.eventDate = [eventDateFormatter dateFromString:@"2016-07-25 08:00 AM"];
+    event1.eventDescription = @"Bring your dog and food";
     event1.mainDog = dog1;
 
     [event1 addDogObject:dog1];
@@ -199,7 +202,8 @@
     event2.eventTitle = @"Yoga Mutts";
     event2.eventAddress = @"156 Jozo Weider Blvd, The Blue Mountains, ON L9Y 3Z2";
     event2.eventOrganizer = @"Viv";
-    event2.eventDate = [eventDateFormatter dateFromString:@"2016-07-29 12:30"];
+    event2.eventDate = [eventDateFormatter dateFromString:@"2016-07-29 12:30 PM"];
+    event2.eventDescription = @"Bring your own mat";
     event2.mainDog = dog2;
     
     [event2 addDogObject:dog2];
@@ -211,7 +215,8 @@
     event3.eventTitle = @"Dawg Gone Eat";
     event3.eventAddress = @"7700 Hurontario Street, Unit 602, Brampton L6Y 4M3";
     event3.eventOrganizer = @"Rene";
-    event3.eventDate = [eventDateFormatter dateFromString:@"2016-07-29 18:00"];
+    event3.eventDate = [eventDateFormatter dateFromString:@"2016-07-30 11:00 AM"];
+    event3.eventDescription = @"Bring food and plates";
     event3.mainDog = dog4;
     
     [event3 addDogObject:dog3];
@@ -224,7 +229,8 @@
     event4.eventTitle = @"Barktinder : Breed Dating";
     event4.eventAddress = @"14184 Niagara Parkway, Niagara-on-the-Lake, ON L0S 1J0";
     event4.eventOrganizer = @"Open Bark";
-    event4.eventDate = [eventDateFormatter dateFromString:@"2016-07-30 23:00"];
+    event4.eventDate = [eventDateFormatter dateFromString:@"2016-07-30 5:00 PM"];
+    event4.eventDescription = @"We need shepard female dogs";
     event4.mainDog = dog7;
 
     [event4 addDogObject:dog1];
@@ -256,6 +262,19 @@
     return self.eventsArray;
 }
 
+#pragma mark - Fetching all users
+
+- (NSArray<User *> *)fetchAllUsers {
+    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"User"];
+    
+    //sort an array
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"userName" ascending:YES];
+    [request setSortDescriptors:@[sortDescriptor]];
+    self.usersArray = [context executeFetchRequest:request error:nil];
+    //NSLog(@"%@",self.eventsArray);
+    return self.usersArray;
+}
 
 
 @end

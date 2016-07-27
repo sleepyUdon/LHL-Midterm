@@ -9,11 +9,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-@class Event;
+@class Event, User;
 
 
 @interface DummyDataManager : NSObject
 - (instancetype)initWithManagedObjectContext:(NSManagedObjectContext *)context;
 // all of your fetch and save methods
 - (NSArray<Event *> *)fetchAllEvents;
+- (NSArray<User *> *)fetchAllUsers;
 @end

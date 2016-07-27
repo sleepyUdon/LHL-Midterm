@@ -33,6 +33,11 @@
 //    self.organizerImageView.image = 
 //    self.eventDateLabel.text = [NSString stringWithFormat:@"On : %@ ", self.event.eventDate];
     
+    NSDateFormatter *eventDateFormatter = [[NSDateFormatter alloc] init];
+    [eventDateFormatter setDateFormat:@"yyyy-MM-dd hh:mm a"];
+    
+    self.eventDateLabel.text = [eventDateFormatter stringFromDate:self.event.eventDate];
+    
     Dog *mainDog = self.event.mainDog;
     
     self.organizerImageView.image = [UIImage imageWithData:mainDog.dogPicture];
