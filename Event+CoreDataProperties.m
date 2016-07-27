@@ -20,5 +20,6 @@
 @dynamic eventTitle;
 @dynamic dog;
 @dynamic mainDog;
+@dynamic eventImage;
 
 @end

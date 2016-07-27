@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *eventDescription;
 @property (nullable, nonatomic, retain) NSString *eventOrganizer;
 @property (nullable, nonatomic, retain) NSString *eventTitle;
+@property (nullable, nonatomic, retain) NSString *eventImage;
 @property (nullable, nonatomic, retain) NSSet<Dog *> *dog;
 @property (nullable, nonatomic, retain) Dog *mainDog;
 

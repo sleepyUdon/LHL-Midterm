@@ -41,10 +41,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma button: TableView
-
 
 #pragma mark - TableView DataSource
+- (void)updateData {
+    [self.tableView reloadData];
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
