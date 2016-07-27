@@ -22,6 +22,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     _dummyDataManager = [[DummyDataManager alloc] initWithManagedObjectContext:self.managedObjectContext];
     UINavigationController *navController = (UINavigationController *)self.window.rootViewController;
+    navController.navigationBar.barStyle = UIStatusBarStyleLightContent;
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0/255.0 green:184.0/255.0 blue:212.0/255.0 alpha:0.6]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    navController.navigationBar.tintColor = [UIColor whiteColor];
+    
     EventsListViewController *eventListVC = (EventsListViewController * )navController.topViewController;
     eventListVC.dummyDataManager = self.dummyDataManager;
 //    SignUpViewController *signupVC = (SignUpViewController * )navController.topViewController;
