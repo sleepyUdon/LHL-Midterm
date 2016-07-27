@@ -12,6 +12,7 @@
 #import "Dog.h"
 #import "ListOfEventsTableViewCell.h"
 #import "DummyDataManager.h"
+#import "EventDetailViewController.h"
 
 @interface EventsListViewController ()
 
@@ -70,10 +71,10 @@
     cell.eventTitle.text = event.eventTitle;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm"];
     NSString *formattedDate = [dateFormatter stringFromDate:event.eventDate];
     
-    NSLog(@"%@",event.eventDate);
+    //NSLog(@"%@",event.eventDate);
     
     cell.eventDate.text = formattedDate;
     cell.eventAddress.text = event.eventAddress;
@@ -91,5 +92,21 @@
 //    self.eventsArray = [context executeFetchRequest:request error:nil];
 //    NSLog(@"%@",self.eventsArray);
 //}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([[segue identifier] isEqualToString:@"showDetail"])
+    {
+        
+        EventDetailViewController *eventDVC = [segue destinationViewController];
+        
+        NSIndexPath *path = self.tableView.indexPathForSelectedRow;
+        
+        eventDVC.event = self.eventsArray[path.row];
+        
+    }
+}
+
 
 @end

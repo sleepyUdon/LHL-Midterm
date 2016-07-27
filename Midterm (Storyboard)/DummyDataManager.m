@@ -36,9 +36,9 @@
 //    NSError *error = nil;
 //    NSFetchRequest *request = [[NSFetchRequest alloc] init];
 //    NSUInteger fetchCount = [self.context countForFetchRequest:request error:&error];
-//    if (fetchCount==0) {
+    if ([self fetchAllEvents].count == 0) {
     [self createDummyData];
-//    }
+    }
 }
 
 - (void)createDummyData {
@@ -234,7 +234,7 @@
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"eventDate" ascending:YES];
     [request setSortDescriptors:@[sortDescriptor]];
     self.eventsArray = [context executeFetchRequest:request error:nil];
-    NSLog(@"%@",self.eventsArray);
+    //NSLog(@"%@",self.eventsArray);
     return self.eventsArray;
 }
 
