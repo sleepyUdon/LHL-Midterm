@@ -32,6 +32,8 @@
 		7CF89FE21D46CC7500907DE3 /* DummyDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89FE11D46CC7500907DE3 /* DummyDataManager.m */; };
 		7CF89FE41D46F84200907DE3 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CF89FE31D46F84200907DE3 /* MapKit.framework */; };
 		A779E2421D4903A8003D1EEB /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A779E2411D4903A8003D1EEB /* CollectionViewCell.m */; };
+		A779E24B1D491D9B003D1EEB /* rottweiler.png in Resources */ = {isa = PBXBuildFile; fileRef = A779E2491D491D9B003D1EEB /* rottweiler.png */; };
+		A779E24C1D491D9B003D1EEB /* boxer.png in Resources */ = {isa = PBXBuildFile; fileRef = A779E24A1D491D9B003D1EEB /* boxer.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +104,8 @@
 		7CF89FE61D48171900907DE3 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
 		A779E2401D4903A8003D1EEB /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		A779E2411D4903A8003D1EEB /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		A779E2491D491D9B003D1EEB /* rottweiler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rottweiler.png; sourceTree = "<group>"; };
+		A779E24A1D491D9B003D1EEB /* boxer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boxer.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 			isa = PBXGroup;
 			children = (
 				7CF89F711D4380F100907DE3 /* Assets.xcassets */,
+				A779E2491D491D9B003D1EEB /* rottweiler.png */,
+				A779E24A1D491D9B003D1EEB /* boxer.png */,
 				7CF89F601D4380F100907DE3 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -394,9 +400,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A779E24C1D491D9B003D1EEB /* boxer.png in Resources */,
 				7CF89F751D4380F100907DE3 /* LaunchScreen.storyboard in Resources */,
 				7CF89F721D4380F100907DE3 /* Assets.xcassets in Resources */,
 				7CF89F701D4380F100907DE3 /* Main.storyboard in Resources */,
+				A779E24B1D491D9B003D1EEB /* rottweiler.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
