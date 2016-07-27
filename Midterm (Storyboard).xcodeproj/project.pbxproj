@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		44CF4BCB1D47FBF90052EAA2 /* Event+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 44CF4BCA1D47FBF90052EAA2 /* Event+CoreDataProperties.m */; };
+		7C616C6D1D495EFD00A35309 /* MyMeetupsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C616C6C1D495EFD00A35309 /* MyMeetupsViewController.m */; };
+		7C616C711D495F4A00A35309 /* MyMeetupsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C616C701D495F4A00A35309 /* MyMeetupsTableViewCell.m */; };
 		7CF89F611D4380F100907DE3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89F601D4380F100907DE3 /* main.m */; };
 		7CF89F641D4380F100907DE3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF89F631D4380F100907DE3 /* AppDelegate.m */; };
 		7CF89F701D4380F100907DE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CF89F6E1D4380F100907DE3 /* Main.storyboard */; };
@@ -56,6 +58,10 @@
 /* Begin PBXFileReference section */
 		44CF4BC91D47FBF90052EAA2 /* Event+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Event+CoreDataProperties.h"; sourceTree = "<group>"; };
 		44CF4BCA1D47FBF90052EAA2 /* Event+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Event+CoreDataProperties.m"; sourceTree = "<group>"; };
+		7C616C6B1D495EFD00A35309 /* MyMeetupsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMeetupsViewController.h; sourceTree = "<group>"; };
+		7C616C6C1D495EFD00A35309 /* MyMeetupsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMeetupsViewController.m; sourceTree = "<group>"; };
+		7C616C6F1D495F4A00A35309 /* MyMeetupsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMeetupsTableViewCell.h; sourceTree = "<group>"; };
+		7C616C701D495F4A00A35309 /* MyMeetupsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMeetupsTableViewCell.m; sourceTree = "<group>"; };
 		7CF89F5C1D4380F100907DE3 /* Midterm (Storyboard).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Midterm (Storyboard).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CF89F601D4380F100907DE3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7CF89F621D4380F100907DE3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -134,6 +140,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C616C6E1D495F0C00A35309 /* My Meetups */ = {
+			isa = PBXGroup;
+			children = (
+				7C616C6F1D495F4A00A35309 /* MyMeetupsTableViewCell.h */,
+				7C616C701D495F4A00A35309 /* MyMeetupsTableViewCell.m */,
+				7C616C6B1D495EFD00A35309 /* MyMeetupsViewController.h */,
+				7C616C6C1D495EFD00A35309 /* MyMeetupsViewController.m */,
+			);
+			name = "My Meetups";
+			sourceTree = "<group>";
+		};
 		7CF89F531D4380F100907DE3 = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +303,7 @@
 		7CF89FD31D46770500907DE3 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7C616C6E1D495F0C00A35309 /* My Meetups */,
 				7CF89FC81D46758400907DE3 /* Login */,
 				7CF89FD21D4676F500907DE3 /* Signup  */,
 				7CF89FD11D4676EB00907DE3 /* Event Detail */,
@@ -431,12 +449,14 @@
 			files = (
 				7CF89FB41D4673F300907DE3 /* LoginViewController.m in Sources */,
 				7CF89FD91D468E0600907DE3 /* User.m in Sources */,
+				7C616C711D495F4A00A35309 /* MyMeetupsTableViewCell.m in Sources */,
 				44CF4BCB1D47FBF90052EAA2 /* Event+CoreDataProperties.m in Sources */,
 				7CF89FCE1D4675D200907DE3 /* UserProfileTableViewCell.m in Sources */,
 				7CF89FAE1D46736900907DE3 /* Dog.m in Sources */,
 				7CF89FCB1D4675A400907DE3 /* UserProfileViewController.m in Sources */,
 				A779E2421D4903A8003D1EEB /* CollectionViewCell.m in Sources */,
 				7CF89FDF1D46963D00907DE3 /* Event.m in Sources */,
+				7C616C6D1D495EFD00A35309 /* MyMeetupsViewController.m in Sources */,
 				7CF89F9E1D466CE500907DE3 /* CoreData.xcdatamodeld in Sources */,
 				7CF89FE21D46CC7500907DE3 /* DummyDataManager.m in Sources */,
 				7CF89F641D4380F100907DE3 /* AppDelegate.m in Sources */,
