@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "DummyDataManager.h"
 
 
 @interface SignUpViewController : UIViewController
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, strong) DummyDataManager *dummyDataManager;
 
 
 @end
