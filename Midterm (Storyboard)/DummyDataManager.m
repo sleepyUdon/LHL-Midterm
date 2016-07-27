@@ -170,6 +170,7 @@
     event1.eventAddress = @"2000 Meadowvale Rd, Toronto, ON M1B 5K7";
     event1.eventOrganizer = @"Eug";
     event1.eventDate = [dateFormatter dateFromString:@"2016-07-29 08:00"];
+    event1.mainDog = dog1;
 
     [event1 addDogObject:dog1];
     [event1 addDogObject:dog2];
@@ -183,6 +184,7 @@
     event2.eventAddress = @"156 Jozo Weider Blvd, The Blue Mountains, ON L9Y 3Z2";
     event2.eventOrganizer = @"Viv";
     event2.eventDate = [dateFormatter dateFromString:@"2016-07-29 12:30"];
+    event2.mainDog = dog2;
     
     [event2 addDogObject:dog2];
     [event2 addDogObject:dog3];
@@ -194,6 +196,7 @@
     event3.eventAddress = @"7700 Hurontario Street, Unit 602, Brampton L6Y 4M3";
     event3.eventOrganizer = @"Rene";
     event3.eventDate = [dateFormatter dateFromString:@"2016-07-29 18:00"];
+    event3.mainDog = dog4;
     
     [event3 addDogObject:dog3];
     [event3 addDogObject:dog4];
@@ -206,6 +209,7 @@
     event4.eventAddress = @"14184 Niagara Parkway, Niagara-on-the-Lake, ON L0S 1J0";
     event4.eventOrganizer = @"Open Bark";
     event4.eventDate = [dateFormatter dateFromString:@"2016-07-30 23:00"];
+    event4.mainDog = dog7;
 
     [event4 addDogObject:dog1];
     [event4 addDogObject:dog2];
