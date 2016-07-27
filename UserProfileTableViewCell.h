@@ -10,4 +10,7 @@
 
 @interface UserProfileTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *eventTitle;
+@property (weak, nonatomic) IBOutlet UILabel *dateAndTime;
+
 @end

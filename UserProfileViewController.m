@@ -7,6 +7,7 @@
 //
 
 #import "UserProfileViewController.h"
+#import "UserProfileTableViewCell.h"
 #import "AppDelegate.h"
 #import "DummyDataManager.h"
 #import "Dog.h"
@@ -31,6 +32,7 @@
 @property UITextField *activeField;
 
 @property (strong,nonatomic) NSArray *dataArray;
+@property (nonatomic, strong) NSArray *eventsArray;
 
 @property (weak, nonatomic) IBOutlet UILabel *errorMessageLabel;
 
@@ -49,6 +51,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // get dummydata
+    
+    DummyDataManager *dataManager = ((AppDelegate *)[UIApplication sharedApplication].delegate).dummyDataManager;
+    self.eventsArray = dataManager.fetchAllEvents;
+    
+    
     
     //setup gender pickerview
     
@@ -96,6 +105,20 @@
     self.dogLocationField.delegate = self;
     self.dogUserNameField.delegate = self;
     self.dogPasswordField.delegate = self;
+    
+    
+    //VIV CREATE MYUSER INFO
+    
+    self.dogPictureView.image = [UIImage imageNamed:@"squarefacedpoodle"];
+    self.dogNameField.text = @"Ollie";
+    self.dogBreedField.text = @"Poodle";
+    self.dogSexField.text = @"Male";
+    self.dogBirthDateField.text = @"12-08-2009"; //format?
+    self.dogOwnerField.text =  @"Camille";
+    self.dogDescriptionField.text = @"I think outside the box";
+    self.dogLocationField.text = @"Guelph";
+    self.dogUserNameField.text = @"MinecraftDog";
+    self.dogPasswordField.text = @"Ursula";
     
     [self registerForKeyboardNotifications];
     
@@ -237,6 +260,38 @@
     self.dogPictureView.image = chosenImage;
     
     [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+#pragma button: TableView
+
+
+#pragma mark - TableView DataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.eventsArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *cellIdentifier = @"userProfileCell";
+    UserProfileTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    Event *event = self.eventsArray[indexPath.row];
+    
+    cell.eventTitle.text = event.eventTitle;
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *formattedDate = [dateFormatter stringFromDate:event.eventDate];
+    
+    NSLog(@"%@",event.eventDate);
+    
+    cell.dateAndTime.text = formattedDate;
+    
+    return cell;
 }
 
 

@@ -16,4 +16,6 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+@property (strong, nonatomic) DummyDataManager *dummyDataManager;
+
 @end
