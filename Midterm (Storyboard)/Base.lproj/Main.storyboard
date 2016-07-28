@@ -443,11 +443,10 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="backgroundCell" destination="BxM-p8-wpr" id="SeZ-57-hn0"/>
                                             <outlet property="eventAddress" destination="ZS3-Dg-U2F" id="wFg-ja-9UY"/>
                                             <outlet property="eventDate" destination="wBC-mY-bwa" id="sF6-JJ-mg9"/>
                                             <outlet property="eventTitle" destination="EJR-nW-9lU" id="Rw0-uY-1pj"/>
-                                            <outlet property="imageView" destination="BxM-p8-wpr" id="Tlw-Rb-VFv"/>
+                                            <outlet property="petImage" destination="BxM-p8-wpr" id="7Wg-xl-U74"/>
                                             <segue destination="j2j-er-Ixw" kind="show" identifier="showDetail" id="Nbx-tf-ggn"/>
                                         </connections>
                                     </tableViewCell>
@@ -566,7 +565,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UPa-y3-v0e" userLabel="DogThumbnail">
                                                 <rect key="frame" x="225" y="114" width="150" height="150"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="F12B4F47-3255-4B36-80BD-C1C9C553311D" translatesAutoresizingMaskIntoConstraints="NO" id="39e-Q6-sys">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="D9F0A8DD-1DF8-46AA-8494-F098B9D9DA10" translatesAutoresizingMaskIntoConstraints="NO" id="39e-Q6-sys">
                                                         <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                     </imageView>
                                                 </subviews>
@@ -1270,7 +1269,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="F12B4F47-3255-4B36-80BD-C1C9C553311D" width="324" height="324">
+        <image name="D9F0A8DD-1DF8-46AA-8494-F098B9D9DA10" width="324" height="324">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

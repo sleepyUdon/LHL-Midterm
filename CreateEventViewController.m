@@ -60,7 +60,6 @@
     newEvent.eventDate = self.datePicker.date;
     
     Dog *dog = [NSEntityDescription insertNewObjectForEntityForName:@"Dog" inManagedObjectContext:context];
-    self.petImageView.image = [UIImage imageNamed:@"dog.png"];
     NSData* petPicture = UIImagePNGRepresentation(self.petImageView.image);
     dog.dogPicture = petPicture;
     
