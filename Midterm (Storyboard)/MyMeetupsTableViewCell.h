@@ -12,6 +12,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *eventTitle;
 @property (weak, nonatomic) IBOutlet UILabel *dateAndTime;
+@property (weak, nonatomic) IBOutlet UILabel *eventAddress;
+@property (weak, nonatomic) IBOutlet UIImageView *eventImage;
 
 
 @end
