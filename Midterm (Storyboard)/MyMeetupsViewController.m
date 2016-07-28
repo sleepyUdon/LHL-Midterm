@@ -13,6 +13,7 @@
 #import "Dog.h"
 #import "User.h"
 #import "Event.h"
+#import "EventDetailViewController.h"
 
 
 @interface MyMeetupsViewController () <UITableViewDelegate, UITableViewDataSource>
@@ -62,6 +63,17 @@
     Event *event = self.eventsArray[indexPath.row];
     
     cell.eventTitle.text = event.eventTitle;
+    cell.eventAddress.text = event.eventAddress;
+    
+    
+    //
+    if (!event.eventImage) {
+        cell.eventImage.image = [UIImage imageNamed:@"dogPack4"];
+    }
+    else {
+        cell.eventImage.image = [UIImage imageNamed:event.eventImage];
+    }
+//
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
@@ -74,6 +86,22 @@
     return cell;
 }
 
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([[segue identifier] isEqualToString:@"showDetail"])
+    {
+        
+        EventDetailViewController *eventDVC = [segue destinationViewController];
+        
+        NSIndexPath *path = self.tableView.indexPathForSelectedRow;
+        
+        eventDVC.event = self.eventsArray[path.row];
+        
+    }
+}
 
 
 

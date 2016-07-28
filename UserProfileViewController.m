@@ -125,6 +125,27 @@
     self.dogBirthDateField.text = [dateFormatter stringFromDate:picker.date];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField == self.dogOwnerField) {
+        [textField resignFirstResponder];
+        [self.dogDescriptionField becomeFirstResponder];
+        
+    }  else if (textField == self.dogDescriptionField) {
+        [textField resignFirstResponder];
+        [self.dogLocationField becomeFirstResponder];
+        
+        
+    }  else if (textField == self.dogLocationField) {
+        [textField resignFirstResponder];
+        [self.dogUserNameField becomeFirstResponder];
+    }  else if (textField == self.dogUserNameField) {
+        [textField resignFirstResponder];
+        [self.dogPasswordField becomeFirstResponder];
+    }
+    return YES;
+}
+
+
 
 #pragma gender picker - datasource
 
@@ -192,13 +213,6 @@
 {
     self.activeField = nil;
 }
-
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return YES;
-}
-
 
 
 #pragma button: Save Profile
