@@ -442,11 +442,10 @@
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="backgroundCell" destination="BxM-p8-wpr" id="SeZ-57-hn0"/>
                                             <outlet property="eventAddress" destination="ZS3-Dg-U2F" id="wFg-ja-9UY"/>
                                             <outlet property="eventDate" destination="wBC-mY-bwa" id="sF6-JJ-mg9"/>
                                             <outlet property="eventTitle" destination="EJR-nW-9lU" id="Rw0-uY-1pj"/>
-                                            <outlet property="imageView" destination="BxM-p8-wpr" id="Tlw-Rb-VFv"/>
+                                            <outlet property="petImage" destination="BxM-p8-wpr" id="7Wg-xl-U74"/>
                                             <segue destination="j2j-er-Ixw" kind="show" identifier="showDetail" id="Nbx-tf-ggn"/>
                                         </connections>
                                     </tableViewCell>

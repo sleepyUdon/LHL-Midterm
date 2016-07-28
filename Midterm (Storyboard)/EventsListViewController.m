@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
    DummyDataManager *dataManager = ((AppDelegate *)[UIApplication sharedApplication].delegate).dummyDataManager;
     self.eventsArray = dataManager.fetchAllEvents;
 }
@@ -34,6 +35,7 @@
 }
 
 - (void)updateData {
+    self.eventsArray = [EventsListViewController fetchingData];
     [self.tableView reloadData];
 }
 
@@ -52,9 +54,13 @@
     ListOfEventsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     Event *event = self.eventsArray[indexPath.row];
     
-    Dog *dogPath = event.mainDog;
-    
-    cell.petImage.image = [UIImage imageWithData:dogPath.dogPicture];
+    if (!event.eventImage) {
+        cell.petImage.image = [UIImage imageNamed:@"dogPack4"];
+    }
+    else {
+        cell.petImage.image = [UIImage imageNamed:event.eventImage];
+    }
+
     cell.eventTitle.text = event.eventTitle;
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
@@ -84,6 +90,16 @@
         eventDVC.event = self.eventsArray[path.row];
         
     }
+}
+
++ (NSArray *)fetchingData {
+    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Event"];
+    
+    //sort an array
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc]initWithKey:@"eventDate" ascending:YES];
+    [request setSortDescriptors:@[sortDescriptor]];
+    return [context executeFetchRequest:request error:nil];
 }
 
 

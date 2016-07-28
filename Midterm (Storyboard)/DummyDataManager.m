@@ -190,6 +190,7 @@
     event1.eventDate = [eventDateFormatter dateFromString:@"2016-07-25 08:00 AM"];
     event1.eventDescription = @"Bring your dog and food";
     event1.mainDog = dog1;
+    event1.eventImage = @"dogPack";
 
     [event1 addDogObject:dog1];
     [event1 addDogObject:dog2];
@@ -205,6 +206,7 @@
     event2.eventDate = [eventDateFormatter dateFromString:@"2016-07-29 12:30 PM"];
     event2.eventDescription = @"Bring your own mat";
     event2.mainDog = dog2;
+    event2.eventImage = @"dogPack1";
     
     [event2 addDogObject:dog2];
     [event2 addDogObject:dog3];
@@ -216,8 +218,9 @@
     event3.eventAddress = @"7700 Hurontario Street, Unit 602, Brampton L6Y 4M3";
     event3.eventOrganizer = @"Rene";
     event3.eventDate = [eventDateFormatter dateFromString:@"2016-07-30 11:00 AM"];
-    event3.eventDescription = @"Bring food and plates";
+    event3.eventDescription = @"Bring your own bowl";
     event3.mainDog = dog4;
+    event3.eventImage = @"dogPack2";
     
     [event3 addDogObject:dog3];
     [event3 addDogObject:dog4];
@@ -230,8 +233,9 @@
     event4.eventAddress = @"14184 Niagara Parkway, Niagara-on-the-Lake, ON L0S 1J0";
     event4.eventOrganizer = @"Open Bark";
     event4.eventDate = [eventDateFormatter dateFromString:@"2016-07-30 5:00 PM"];
-    event4.eventDescription = @"We need shepard female dogs";
+    event4.eventDescription = @"We need female shepherd dogs";
     event4.mainDog = dog7;
+    event4.eventImage = @"dogPack3";
 
     [event4 addDogObject:dog1];
     [event4 addDogObject:dog2];
