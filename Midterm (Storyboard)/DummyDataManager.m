@@ -185,7 +185,7 @@
     
     Event *event1 = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.context];
     event1.eventTitle = @"Puppymon: Game of Bones ";
-    event1.eventAddress = @"2000 Meadowvale Rd, Toronto, ON M1B 5K7";
+    event1.eventAddress = @"2000 Meadowvale Rd, Toronto";
     event1.eventOrganizer = @"Eug";
     event1.eventDate = [eventDateFormatter dateFromString:@"2016-07-25 08:00 AM"];
     event1.eventDescription = @"Bring your dog and food";
@@ -201,7 +201,7 @@
     
     Event *event2 = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.context];
     event2.eventTitle = @"Yoga Mutts";
-    event2.eventAddress = @"156 Jozo Weider Blvd, The Blue Mountains, ON L9Y 3Z2";
+    event2.eventAddress = @"156 Jozo Weider Blvd, The Blue Mountains";
     event2.eventOrganizer = @"Viv";
     event2.eventDate = [eventDateFormatter dateFromString:@"2016-07-29 12:30 PM"];
     event2.eventDescription = @"Bring your own mat";
@@ -215,7 +215,7 @@
     
     Event *event3 = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.context];
     event3.eventTitle = @"Dawg Gone Eat";
-    event3.eventAddress = @"7700 Hurontario Street, Unit 602, Brampton L6Y 4M3";
+    event3.eventAddress = @"7700 Hurontario Street, Unit 602, Brampton";
     event3.eventOrganizer = @"Rene";
     event3.eventDate = [eventDateFormatter dateFromString:@"2016-07-30 11:00 AM"];
     event3.eventDescription = @"Bring your own bowl";
@@ -230,7 +230,7 @@
     
     Event *event4 = [NSEntityDescription insertNewObjectForEntityForName:@"Event" inManagedObjectContext:self.context];
     event4.eventTitle = @"Barktinder : Breed Dating";
-    event4.eventAddress = @"14184 Niagara Parkway, Niagara-on-the-Lake, ON L0S 1J0";
+    event4.eventAddress = @"14184 Niagara Parkway, Niagara-on-the-Lake";
     event4.eventOrganizer = @"Open Bark";
     event4.eventDate = [eventDateFormatter dateFromString:@"2016-07-30 5:00 PM"];
     event4.eventDescription = @"We need female shepherd dogs";
