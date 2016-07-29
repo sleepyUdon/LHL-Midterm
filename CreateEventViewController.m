@@ -137,7 +137,14 @@
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
+    if (textField == self.eventTitle) {
+        [textField resignFirstResponder];
+        [self.eventAddress becomeFirstResponder];
+    
+    }  else if (textField == self.organizer) {
+        [textField resignFirstResponder];
+        [self.shortDescription becomeFirstResponder];
+    }
     return YES;
 }
 
