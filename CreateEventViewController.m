@@ -32,6 +32,12 @@
     [self userImageSetup];
     [self userImageSetup];
 
+    
+    self.eventTitle.delegate = self;
+    self.eventAddress.delegate = self;
+    self.eventDate.delegate = self;
+    self.organizer.delegate = self;
+    self.shortDescription.delegate = self;
 }
 
 #pragma mark - Setup User image
@@ -87,7 +93,7 @@
     self.eventDate.text = formattedDate;
 }
 
-#pragma mark - Keyboard setup
+#pragma SetupKeyboard
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField{
     self.activeField = textField;
@@ -134,6 +140,8 @@
 {
     self.activeField = nil;
 }
+
+
 
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
