@@ -50,10 +50,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
     //setup gender pickerview
-    
     
     UIPickerView *pickerView = [[UIPickerView alloc] init];
     self.dataArray = @[@"Female",@"Male"];
@@ -83,8 +80,6 @@
     [self.datePicker setDate:[NSDate date]];
     [self.datePicker addTarget:self action:@selector(onDatePickerValueChanged:) forControlEvents:UIControlEventValueChanged];
     self.dogBirthDateField.inputView = self.datePicker;
-    
-    
     
     // setup textfields
     
